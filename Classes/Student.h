@@ -28,19 +28,20 @@ class Student{
             program_count = _program_count;
         }
 
-        void display(){
-            cout<<"\t|| STUDENT DETAILS ||"<<endl;
-            cout<<"Name: "<<name<<endl;
-            cout<<"Roll Number: "<<roll_number<<endl;
-            cout<<"College: "<<endl;
-            cout<<"Course: "<<course<<endl;
-            cout<<"Course Duration: "<<course_duration<<endl;
-            cout<<"CGPA: "<<cgpa<<endl;
-            cout<<"Number of programs enrolled: "<<program_count<<endl;
-        }
-
+        friend ostream operator<<(ostream& out,Student&);
         friend bool operator > (Student&,Student&);
 };
+
+ostream operator<<(ostream& out,Student& student){
+    cout<<"\t|| STUDENT DETAILS ||"<<endl;
+    cout<<"Name: "<<student.name<<endl;
+    cout<<"Roll Number: "<<student.roll_number<<endl;
+    cout<<"College: "<<student.college<<endl;
+    cout<<"Course: "<<student.course<<endl;
+    cout<<"Course Duration: "<<student.course_duration<<endl;
+    cout<<"CGPA: "<<student.cgpa<<endl;
+    cout<<"Number of programs enrolled: "<<student.program_count<<endl;
+}
 
 bool operator > (Student& student1,Student& student2){
 

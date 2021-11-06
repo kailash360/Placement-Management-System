@@ -5,7 +5,7 @@ using namespace std;
 #define OFFER_H
 
 class Offer{
-    private:
+    protected:
         int amount; 
         string location;
         string type;

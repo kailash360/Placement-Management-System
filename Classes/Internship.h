@@ -14,17 +14,19 @@ class Internship:public Offer{
             program_count = _program_count;
         }
 
-        void display(){
-            cout<<"\t|| INTERNSHIP DETAILS ||"<<endl;
-            cout<<"Amount: "<<amount<<endl;
-            cout<<"Location: "<<location<<endl;
-            cout<<"Type: "<<type<<endl;
-            cout<<"Program Count: "<<program_count<<endl;
-        }
-
         void set_program_count(int _program_count){
             program_count = _program_count;
         }
+
+        friend ostream& operator<<(ostream& out, Internship& internship);
 };
+
+ostream& operator<<(ostream& out,Internship& internship){
+    cout<<"\t|| INTERNSHIP DETAILS ||"<<endl;
+    cout<<"Amount: "<<internship.amount<<endl;
+    cout<<"Location: "<<internship.location<<endl;
+    cout<<"Type: "<<internship.type<<endl;
+    cout<<"Program Count: "<<internship.program_count<<endl;
+}
 
 #endif

@@ -1,6 +1,9 @@
 #include <iostream>
 using namespace std;
 
+#ifndef STUDENT_H
+#define STUDENT_H
+
 class Student{
     
     private:
@@ -71,3 +74,4 @@ bool operator > (Student& student1,Student& student2){
 }
 
 
+#endif

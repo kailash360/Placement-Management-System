@@ -21,6 +21,11 @@ public:
     {
         program_count = _program_count;
     }
+
+    int get_program_count(){
+        return program_count;
+    }
+
     friend class Company; 
     friend ostream &operator<<(ostream &out, Internship &internship);
 };

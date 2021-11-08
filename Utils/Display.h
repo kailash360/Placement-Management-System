@@ -9,7 +9,7 @@ void display_companies(vector<Company> &Companies){
 
     int index = 1;
     for(auto company :Companies){
-        cout<<index++<<"\t\t"<<company.company_name<<"\t\t"<<company.company_location<<endl;
+        cout<<index++<<"\t\t"<<company.get_name()<<"\t\t"<<company.get_location()<<endl;
     }
 }
 

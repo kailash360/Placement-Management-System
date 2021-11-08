@@ -31,6 +31,15 @@ class Job:public Offer {
         void set_role(string _role) {
             role = _role;
         }
+
+        int get_required_experience() {
+            return required_experience;
+        }
+
+        string get_role() {
+            return role;
+        }
+
         friend class Company; 
         friend ostream operator <<(ostream&, Job&);
 };

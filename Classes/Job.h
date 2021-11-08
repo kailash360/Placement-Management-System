@@ -6,8 +6,16 @@
 class Job:public Offer {
     private:
         int required_experience; 
+    protected:
         string role;
     public:
+        Job(){
+            amount = 0;
+            location = "";
+            type = "";
+            required_experience = 0;
+            role = "";
+        }
         Job(int _amount, string _location, string _type,int _required_experience,string _role){
             amount = _amount;
             location = _location;

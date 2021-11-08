@@ -31,7 +31,7 @@ class Job:public Offer {
         void set_role(string _role) {
             role = _role;
         }
-
+        friend class Company; 
         friend ostream operator <<(ostream&, Job&);
 };
 

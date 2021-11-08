@@ -1,5 +1,8 @@
-#include <bits/stdc++.h>
-#include "Internship.h"
+
+#include <iostream>
+#include <vector>
+#include "./Job.h"
+#include "./Internship.h"
 using namespace std;
 
 class Company{

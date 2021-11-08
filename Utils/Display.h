@@ -1,8 +1,7 @@
-#include <iostream>
-#include <vector>
 #include "../Classes/Company.cpp"
 
-using namespace std;
+#ifndef DISPLAY_H
+#define DISPLAY_H
 
 void display_companies(vector<Company> &Companies){
     cout<<"|| LIST OF COMPANIES ||"<<endl;
@@ -13,3 +12,5 @@ void display_companies(vector<Company> &Companies){
         cout<<index++<<"\t\t"<<company.company_name<<"\t\t"<<company.company_location<<endl;
     }
 }
+
+#endif

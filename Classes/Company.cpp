@@ -3,7 +3,11 @@
 #include "Internship.h"
 using namespace std;
 
+#ifndef COMPANY_H
+#define COMPANY_H
+
 class Company{
+protected:
     string company_name;
     string company_location;
     /*Branch here shows which branch of collegee will company target Eg: Mech, Elec, CSE*/
@@ -147,3 +151,5 @@ ostream operator<<(ostream& out,Company& company){
     cout<<"Branch Preferred: "<<company.company_branch<<endl;
     cout<<"Total Offers made: "<<company.total_offers<<endl;
 }
+
+#endif

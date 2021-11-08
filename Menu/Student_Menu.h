@@ -1,4 +1,4 @@
-#include "Student.h"
+#include "../Classes/Student.h"
 #include "../Classes/Company.cpp"
 #include "../Utils/File.h"
 #include "../Utils/Display.h"

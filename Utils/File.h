@@ -2,6 +2,9 @@
 using namespace std;
 #include "../Classes/Student.h"
 
+#ifndef FILE_H
+#define FILE_H
+
 void tokenize_student(string s,vector<Student> &data){
     
     // Vector of string to save tokens
@@ -22,13 +25,13 @@ void tokenize_student(string s,vector<Student> &data){
     data.push_back(*student);
 }
 
-void read_file(string _file_name, vector<Student> &students){
+void read_file(vector<Student> &students){
     
     fstream fin,fout;
     string line;
 
     //Read data of students
-    fin.open("Student.csv");
+    fin.open("./Data/Student.csv");
     while(!fin.eof()){
         fin>>line;
         tokenize_student(line,students);
@@ -36,3 +39,4 @@ void read_file(string _file_name, vector<Student> &students){
     fin.close();
 }
 
+#endif

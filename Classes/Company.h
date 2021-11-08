@@ -1,7 +1,7 @@
 #include <iostream>
 #include <vector>
-#include "Job.h"
-#include "Internship.h"
+#include "./Job.h"
+#include "./Internship.h"
 using namespace std;
 
 class Company{

@@ -11,6 +11,11 @@ class Placement
         this->highest = highest;
         this->year= year;
     }
+    void percentage_placed()
+    {
+        double per=(total_placed/total_appeared)*100;
+        cout<<"Percentage of Students Placed: "<<per<<endl;
+    }
  friend ostream operator<<(ostream& out,Placement& p);
 };
 ostream operator<<(ostream& out,Placement &p){

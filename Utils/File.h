@@ -1,10 +1,11 @@
 #include <bits/stdc++.h>
 using namespace std;
+#include "../Classes/Student.h"
 
-void tokenize(string s,vector<vector<string>> &data)
-{
+void tokenize_student(string s,vector<Student> &data){
+    
     // Vector of string to save tokens
-    vector <string> tokens;
+    vector <string> row;
       
     // stringstream class check1
     stringstream check1(s);
@@ -13,21 +14,25 @@ void tokenize(string s,vector<vector<string>> &data)
       
     // Tokenizing w.r.t. ','
     while(getline(check1, intermediate, ',')){
-        tokens.push_back(intermediate);
+        row.push_back(intermediate);
     }
 
     //Push the tokens to the data
-    data.push_back(tokens);
+    Student* student = new Student(row[0],row[1],stoi(row[2]),row[3],row[4],stoi(row[5]),stod(row[6]),stoi(row[7]));
+    data.push_back(*student);
 }
 
-void read_file(string _file_name, vector<vector<string>> &data){
+void read_file(string _file_name, vector<Student> &students){
     
     fstream fin,fout;
-    fin.open(_file_name);
     string line;
+
+    //Read data of students
+    fin.open("Student.csv");
     while(!fin.eof()){
         fin>>line;
-        tokenize(line,data);
+        tokenize_student(line,students);
     }
+    fin.close();
 }
 

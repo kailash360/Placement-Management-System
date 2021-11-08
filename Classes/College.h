@@ -13,25 +13,27 @@ class College{
     int students;
     // vector <Placements> placements;
 
-    College(string _college_name, string _college_location, int _students){
-        college_name=_college_name;
-        college_location=_college_location;
-        students=_students;
-    }
+    public:
 
-    void get_values(){
-        cout<<"college Name- "<<college_name<<endl;
-        cout<<"college Location- "<<college_location<<endl;
-        cout<<"Number of students- "<<students<<endl;
-        cout<<"List of companies visiting college- "<<endl;
-        int sr_no=1;
-        for (auto item:college_companies){
-            cout<<sr_no<<"\t"<<item;
+        College(string _college_name, string _college_location, int _students){
+            college_name=_college_name;
+            college_location=_college_location;
+            students=_students;
         }
-    }
 
-    // List of companies which have visited college 
-    void append_companies(){
+        void get_values(){
+            cout<<"college Name- "<<college_name<<endl;
+            cout<<"college Location- "<<college_location<<endl;
+            cout<<"Number of students- "<<students<<endl;
+            cout<<"List of companies visiting college- "<<endl;
+            int sr_no=1;
+            for (auto item:college_companies){
+                cout<<sr_no<<"\t"<<item;
+            }
+        }
 
-    }
+        // List of companies which have visited college 
+        void append_companies(){
+
+        }
 };

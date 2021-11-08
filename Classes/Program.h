@@ -1,6 +1,8 @@
 #include <iostream>
-
 using namespace std;
+
+#ifndef PROGRAM_H
+#define PROGRAM_H
 
 class Program{
     private:
@@ -32,3 +34,5 @@ class Program{
         }
         friend class Student;
 };
+
+#endif

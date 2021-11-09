@@ -85,14 +85,51 @@ void college_details_menu(vector<College> &Colleges,int selected_college){
     }
 }
 
+void student_details_menu(vector<Student> &Students){
 
-void Student_Menu(vector<Company> &Companies, vector<College> &Colleges){
+    display_students(Students);
+
+    int selected_student = 0;
+    cout<<"Choose your serial number: ";
+    cin >> selected_student;
+
+    while(true){
+
+        //Select the detail which the student wants to see 
+        int option = 1;
+        display_line(1);
+        cout<<"Choose the number of what you want to see:"<<endl;
+        cout<<"1.My Details\n2.My Programs\n3.Add new program\n4.Return to previous menu\n->";
+        cin>>option;
+        display_line(1);
+
+        //Display job or internship for selected company
+        //based on the selected option
+        switch(option){
+            case 1:
+                cout<<Students[selected_student-1];
+                break;
+            case 2:
+                Students[selected_student-1].show_program();
+                break;
+            case 3:
+                Students[selected_student-1].add_programmes();
+                break;          
+            case 4:
+                return;
+            default:
+                cout<<"Invalid choice"<<endl;
+        }
+    }
+}
+
+void Student_Menu(vector<Student> &Students,vector<Company> &Companies, vector<College> &Colleges){
 
     int choice = 0,selected_college = 0;
     while(true){
 
         cout<<"Choose from the following:"<<endl;
-        cout<<"1.Offers\n2.College Details\n->";
+        cout<<"1.Offers\n2.College Details\n3.Student Details\n4.Exit\n->";
         cin>>choice;
 
         switch(choice){
@@ -109,6 +146,12 @@ void Student_Menu(vector<Company> &Companies, vector<College> &Colleges){
 
                 college_details_menu(Colleges,selected_college);
                 break;
+            case 3:
+                student_details_menu(Students);
+                break;
+            case 4:
+                cout<<"Thank You"<<endl;
+                exit(0);
             default:
                 cout<<"Invalid choice"<<endl;
         }

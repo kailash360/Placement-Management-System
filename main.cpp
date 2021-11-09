@@ -23,7 +23,7 @@ int main(){
 
     switch(option) {
         case 1: 
-            Student_Menu(companies,colleges);
+            Student_Menu(students,companies,colleges);
             break;
         case 2: 
             Company_Menu(companies,colleges);

@@ -20,6 +20,31 @@ void display_line(int choice){
     }
 }
 
+void display_students(vector <Student> &Students){
+    cout<<"\t  || LIST OF STUDENTS ||\n"<<endl;
+    cout.width(5);
+    cout<<"Serial No."<<"|";
+    cout.width(12);
+    cout<<"Name"<<"   \t|";
+    cout.width(10);
+    cout<<"Roll Number"<<"\t|";
+    cout<<endl;
+    display_line(2);
+
+    int index = 1;
+    for(auto student :Students){
+        cout.width(5);
+        cout<<index++<<" \t  |";
+        cout.width(15);
+        cout<<student.name<<"\t|";
+        cout.width(10);
+        cout<<student.roll_number<<"\t|";
+        cout<<endl;
+    }
+    cout<<"\n"<<endl;
+    display_line(1);    
+}
+
 void display_companies(vector<Company> &Companies){
     cout<<"\t  || LIST OF COMPANIES ||\n"<<endl;
     cout.width(5);

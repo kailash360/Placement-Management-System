@@ -45,7 +45,7 @@ class Job:public Offer {
 };
 
 ostream& operator<<(ostream& out, Job& job){
-    out<<"|| JOB DETAILS ||"<<endl;
+    out<<"\t\t|| JOB DETAILS ||\n"<<endl;
     out<<"Role: "<<job.role<<endl;
     out<<"Amount: "<<job.amount<<endl;
     out<<"Location: "<<job.location<<endl;

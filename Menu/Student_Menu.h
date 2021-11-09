@@ -18,6 +18,12 @@ void Student_Menu(vector<Company> &Companies){
         cin>>offer;
         display_line(1);
 
+        //Exit if chosen
+        if(offer==3){
+            cout<<"Thank You"<<endl;
+            return;
+        }
+
         //Display the companies
         display_companies(Companies);
         int selected_company = 1;
@@ -33,7 +39,6 @@ void Student_Menu(vector<Company> &Companies){
         //based on the selected option
         switch(offer){
             case 1: 
-                cout<<"\t || LIST OF JOBS ||"<<endl;
                 Companies[selected_company - 1].display_job();
                 break;
             case 2: 

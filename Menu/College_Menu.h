@@ -1,15 +1,16 @@
 #ifndef COLLEGE_MENU_H
 #define COLLEGE_MENU_H
+
 #include "../Classes/College.h"
 #include "../Classes/Placement.h"
 #include "../Utils/File.h"
-#include "../Utils/Display_College.h"
+#include "../Utils/Display.h"
 void College_Menu(vector<College> &Colleges)
 {
     bool flag=true;
         display_line(1);
         int choice, choice1;
-        display_college1(Colleges);
+        display_college_list(Colleges);
         display_line(1);
         while(flag)
         {

@@ -3,7 +3,6 @@
 #include "./Menu/College_Menu.h"
 #include "./Utils/File.h"
 #include "./Utils/Display.h"
-#include "./Utils/Display_College.h"
 using namespace std;
 
 int main(){

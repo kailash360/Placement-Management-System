@@ -12,7 +12,7 @@ class College{
     string college_location;
     vector <string> college_companies;
     int index=1;
-    vector <Placement*> p;
+    vector <Placement> p;
     int students;
 
     public:
@@ -47,7 +47,7 @@ class College{
         cout<<"enter the total number of candidates placed in year "<<year<<": ";cin>>total_placed;
         cout<<"enter the total number of candidates appeared in year "<<year<<": ";cin>>total_appeared;
         Placement *current_stat=new Placement(average,highest,year,total_placed, total_appeared);
-        p.push_back(current_stat);
+        p.push_back(*current_stat);
     }
     void delete_placement_stat()
     {
@@ -56,7 +56,7 @@ class College{
         cin>>year;
        for(int i=0;i<p.size();i++)
        {
-        if(p[i]->year==year)
+        if(p[i].year==year)
         {
             for(int j=i;j<p.size()-1;j++)
             {
@@ -73,10 +73,10 @@ class College{
         cin>>year;
         for(int i=0;i<p.size();i++)
         {
-            if(p[i]->year==year)
+            if(p[i].year==year)
             {
                 cout<<"average salary\thighest package offered\ttotal number of candidates occured\ttotal number of candidates placed"<<endl;
-                cout<<p[i]->average<<"LPA\t      "<<p[i]->highest<<"LPA\t\t    "<<p[i]->total_appeared<<"\t\t      "<<p[i]->total_placed<<endl;
+                cout<<p[i].average<<"LPA\t      "<<p[i].highest<<"LPA\t\t    "<<p[i].total_appeared<<"\t\t      "<<p[i].total_placed<<endl;
             }
         }
     }
@@ -100,10 +100,11 @@ class College{
             sort(p.begin(), p.end(), less_than_key());
             for(int i = p.size()-1; i>=0;i--)
             {
-                cout<<"YEAR "<<p[i]->year<<endl;
-                display_line(2);
+                cout<<"YEAR "<<p[i].year<<endl;
+                // display_line(2);
+                //@vedratan
                 cout<<"average salary\thighest package offered\ttotal number of candidates occured\ttotal number of candidates placed"<<endl;
-                cout<<p[i]->average<<"LPA\t      "<<p[i]->highest<<"LPA\t\t    "<<p[i]->total_appeared<<"\t\t      "<<p[i]->total_placed<<endl;
+                cout<<p[i].average<<"LPA\t      "<<p[i].highest<<"LPA\t\t    "<<p[i].total_appeared<<"\t\t      "<<p[i].total_placed<<endl;
             }
         }
         friend ostream& operator<<(ostream&out,College& college);

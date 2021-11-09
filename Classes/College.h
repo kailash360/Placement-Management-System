@@ -4,7 +4,8 @@
 #include "Placement.h"
 using namespace std;
 
-// #include"Placements.h"
+#ifndef COLLEGE_H
+#define COLLEGE_H
 
 class College{
     string college_name;
@@ -21,7 +22,6 @@ class College{
             college_location=_college_location;
             students=_students;
         }
-    }
     void add_placement_stats()
     {
         double average;
@@ -80,6 +80,7 @@ class College{
 
         // List of companies which have visited college 
         void append_companies(){
-
         }
 };
+
+#endif

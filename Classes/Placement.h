@@ -1,10 +1,13 @@
 #include<bits/stdc++.h>
 using namespace std;
+
+#ifndef PLACEMENT_H
+#define PLACEMENT_H
 class Placement
 {
     double average;
     double highest;
-    int year,total_placed,total_appeared,year;
+    int year,total_placed,total_appeared;
     Placement(int average,double highest, int year,int total_placed, int total_appeared)
     {
         this->average = average;
@@ -27,3 +30,5 @@ ostream operator<<(ostream& out,Placement &p){
     cout<<"Overall Average Package: "<<p.average<<endl;
     cout<<"Total Number of Students Occurred: "<<p.total_appeared<<endl;
 }
+
+#endif

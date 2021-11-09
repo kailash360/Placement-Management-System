@@ -1,4 +1,6 @@
 // College (name, location,(inherit->>placements),students)
+#ifndef COLLEGE_H
+#define COLLEGE_H
 #include<iostream>
 #include<vector>
 #include "Placement.h"
@@ -26,7 +28,7 @@ class College{
     {
         double average;
         double highest;
-        int year,total_placed,total_appeared,year;
+        int year,total_placed,total_appeared;
         cout<<"enter the year of which you want to enter the placement stats: ";cin>>year;
         cout<<"enter the average salary of all the students placed in year "<<year<<": ";cin>>average;
         cout<<"enter the highest package offered in the year "<<year<<": ";cin>>highest;
@@ -84,3 +86,4 @@ class College{
 };
 
 #endif
+

@@ -21,10 +21,10 @@ class Placement
         double per=(total_placed/total_appeared)*100;
         cout<<"Percentage of Students Placed: "<<per<<endl;
     }
+    friend ostream& operator<<(ostream& out,Placement& p);
     friend class College;
- friend ostream operator<<(ostream& out,Placement& p);
 };
-ostream operator<<(ostream& out,Placement &p){
+ostream& operator<<(ostream& out,Placement &p){
     cout<<"\t|| STUDENT DETAILS ||"<<endl;
     cout<<"Highest Package: "<<p.highest<<endl;
     cout<<"Overall Average Package: "<<p.average<<endl;

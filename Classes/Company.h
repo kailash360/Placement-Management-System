@@ -123,13 +123,38 @@ class Company{
         }
 
         void display_internship(){
-            int index;
-            cout << "Location\tType\t\tRole\n";
-            for (int i = 0; i <internships.size(); i++){
-                cout << (internships[i]).get_location() << "\t" << internships[i].get_type() << "\t" << internships[i].get_role();
+        
+            cout<<"\t\t  || LIST OF INTERNSHIPS ||\n"<<endl;
+            cout.width(5);
+            cout<<"Serial No."<<"|";
+            cout.width(15);
+            cout<<"Location"<<"\t|";
+            cout.width(10);
+            cout<<"Type"<<"   \t|";
+            cout.width(15);
+            cout<<"Role"<<"\t|";
+            cout<<endl;
+            cout<<"-------------------------------------------------------------------------"<<endl;
+
+            int index = 1;
+            for(auto internship: internships){
+                cout.width(5);
+                cout<<index++<<" \t  |";
+                cout.width(15);
+                cout<<internship.get_location()<<"\t|";
+                cout.width(10);
+                cout<<internship.get_type()<<"\t|";
+                cout.width(15);
+                cout<<internship.get_role()<<"\t|";
+                cout<<endl;
             }
-            cout << "Enter the serial number of the internship you wish to see in detail and 0 if you wish to skip";
+            cout<<"\n"<<endl;
+            cout<<"=========================================================================="<<endl;
+        
+
+            cout << "Enter serial number of the internship to see in detail\n(0 if you wish to skip): ";
             cin >> index;
+            cout<<"=========================================================================="<<endl;
             if (index){
                 cout << (internships[index - 1]);
             }
@@ -165,7 +190,7 @@ class Company{
             cout<<"=========================================================================="<<endl;
             
 
-            cout << "Enter serial number of the internship to see in detail\n(0 if you wish to skip): ";
+            cout << "Enter serial number of the job to see in detail\n(0 if you wish to skip): ";
             cin >> index;
             cout<<"=========================================================================="<<endl;
             if (index){

@@ -21,7 +21,7 @@ int main(){
 
     switch(option) {
         case 1: 
-            Student_Menu(companies);
+            Student_Menu(companies,colleges);
             break;
         default:
             cout<<"Invalid choice"<<endl;

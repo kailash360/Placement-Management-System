@@ -28,6 +28,14 @@ class College{
             college_companies.push_back("IBM"); 
             college_companies.push_back("Flipkart"); 
         }
+
+        string get_name(){
+            return college_name;
+        }
+
+        string get_location(){
+            return college_location;
+        }
     
     void add_placement_stats()
     {
@@ -77,22 +85,22 @@ class College{
         void append_companies(){
             string newcompany;
             cout<<"enter the company name: ";getline(cin,newcompany);
+        }
 
-        }
-        void get_values(){
-        cout.width(5);
-        cout<<index++<<" \t  |";
-        cout.width(15);
-        cout<<college_name<<"\t|";
-        cout.width(10);
-        cout<<college_location<<"\t|";
-        cout<<endl;
-        cout<<"Companies Visited in This COllege:-"<<endl;
-            int sr_no=1;
-            for (auto item:college_companies){
-                cout<<sr_no++<<"\t"<<item;
-            }
-        }
+        friend ostream& operator<<(ostream&out,College& college);
 };
+
+ostream& operator<<(ostream&out,College& college){
+    cout<<"\t || COLLEGE DETAILS ||"<<endl;
+    
+    cout<<"Serial No."<<college.index++<<endl;
+    cout<<"College Name"<<college.college_name<<endl;
+    cout<<"Location"<<college.college_location<<endl;
+    cout<<"Companies that visited "<<college.college_name<<": "<<endl;
+    int sr_no=1;
+    for (auto item:college.college_companies){
+        cout<<sr_no++<<". "<<item<<endl;
+    }
+}
 
 #endif

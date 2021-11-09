@@ -4,6 +4,7 @@
 #include "../Classes/Company.h"
 #include "../Classes/Job.h"
 #include "../Classes/Company.h"
+#include "../Classes/College.h"
 using namespace std;
 
 void display_companies(vector<Company>&);
@@ -29,6 +30,31 @@ void display_companies(vector<Company> &Companies){
         cout<<company.get_name()<<"\t|";
         cout.width(10);
         cout<<company.get_location()<<"\t|";
+        cout<<endl;
+    }
+    cout<<"\n"<<endl;
+    display_line(1);
+}
+
+void display_college_list(vector <College> &Colleges){
+    cout<<"\t  || LIST OF COLLEGE ||\n"<<endl;
+    cout.width(5);
+    cout<<"Serial No."<<"|";
+    cout.width(12);
+    cout<<"Name"<<"   \t|";
+    cout.width(10);
+    cout<<"Location"<<"\t|";
+    cout<<endl;
+    display_line(2);
+
+    int index = 1;
+    for(auto college:Colleges){
+        cout.width(5);
+        cout<<index++<<" \t  |";
+        cout.width(15);
+        cout<<college.get_name()<<"\t|";
+        cout.width(10);
+        cout<<college.get_location()<<"\t|";
         cout<<endl;
     }
     cout<<"\n"<<endl;

@@ -1,8 +1,8 @@
-#ifndef DISPLAY_H
-#define DISPLAY_H
+#ifndef DISPLAY_COLLEGE_H
+#define DISPLAY_COLLEGE_H
 #include "../Classes/College.h"
 #include "../Classes/Placement.h"
-void display_college(vector<College> &Colleges){
+void display_college1(vector<College> &Colleges){
     cout<<"\t  || LIST OF COLLEGES ||\n"<<endl;
     cout.width(5);
     cout<<"Serial No."<<"|";
@@ -15,8 +15,6 @@ void display_college(vector<College> &Colleges){
     int index = 1;
     for(auto college :Colleges){
         college.get_values();
-        cout<<"\t  PLACEMENT STAT"
-        college.show_placement_stat();
     }
     cout<<"\n"<<endl;
     display_line(1);

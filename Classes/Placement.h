@@ -13,6 +13,11 @@ class Placement
         this->total_placed = total_placed;
         this->total_appeared = total_appeared;
     }
+    
+void sort_placement(vector<Placement>&p1)
+{
+    
+}
     void percentage_placed()
     {
         double per=(total_placed/total_appeared)*100;

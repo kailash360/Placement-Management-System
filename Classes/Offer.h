@@ -22,6 +22,16 @@ class Offer{
         void set_type(string _type){
             type = _type;
         }
+        int get_amount(){
+            return amount;
+        }
+        string get_location(){
+            return location;
+        }
+        string get_type(){
+            return type;
+        }
+        friend class Company;
 };
 
 #endif

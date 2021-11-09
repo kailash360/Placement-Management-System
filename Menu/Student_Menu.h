@@ -19,7 +19,7 @@ void Student_Menu(vector<Company> &Companies){
         //Display the companies
         display_companies(Companies);
         int selected_company = 1;
-        cout<<"Select the company you want to see:"<<endl;
+        cout<<"Select the company you want to see: ";
         cin>>selected_company;
 
         //Display the details of particular company
@@ -31,11 +31,11 @@ void Student_Menu(vector<Company> &Companies){
             case 1: 
                 cout<<"\tLIST OF JOBS"<<endl;
                 Companies[selected_company - 1].display_job();
-                break;
+                continue;
             case 2: 
                 cout<<"\tLIST OF INTERNSHIPS"<<endl;
                 Companies[selected_company - 1].display_internship();
-                break;
+                continue;
             case 3:
                 cout<<"Thank You"<<endl;
                 return;

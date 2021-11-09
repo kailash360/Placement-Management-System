@@ -50,7 +50,7 @@ ostream& operator<<(ostream& out, Job& job){
     out<<"Amount: "<<job.amount<<endl;
     out<<"Location: "<<job.location<<endl;
     out<<"Type: "<<job.type<<endl;
-    out<<"Required Experience: "<<job.required_experience<<endl;
+    out<<"Required Experience: "<<job.required_experience<<"years"<<endl;
 }
 
 #endif

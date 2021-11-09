@@ -1,5 +1,6 @@
 #include <iomanip>
 #include "./Menu/Student_Menu.h"
+#include "./Menu/Company_Menu.h"
 #include "./Menu/College_Menu.h"
 #include "./Utils/File.h"
 #include "./Utils/Display.h"
@@ -23,6 +24,9 @@ int main(){
     switch(option) {
         case 1: 
             Student_Menu(companies,colleges);
+            break;
+        case 2: 
+            Company_Menu(companies,colleges);
             break;
         case 3:
             College_Menu(colleges);

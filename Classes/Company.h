@@ -1,6 +1,7 @@
 #include <bits/stdc++.h>
 #include "Job.h"
 #include "Internship.h"
+#include "../Utils/Display.h"
 using namespace std;
 
 #ifndef COMPANY_H
@@ -16,11 +17,13 @@ class Company{
         vector<Job>jobs;
         vector<Internship>internships;
     public:
-        Company(string _company_name, string _company_location, string _company_branch){
+        Company(string _company_name, string _company_location, string _company_branch,vector<Job>& _jobs,vector <Internship>& _internships,int _total_offers = 0){
             company_name=_company_name;
             company_location=_company_location;
             company_branch=_company_branch;
-            total_offers=0;
+            total_offers=_total_offers;
+            jobs=_jobs;
+            internships = _internships;
         }
 
         void set_location(string _company_location){
@@ -133,28 +136,55 @@ class Company{
         }
 
         void display_job(){
-            int index;
-            cout << "Location\tType\t\tRole\n";
-            for (int index = 0; index < jobs.size(); index++){
-                cout << jobs[index].get_location() << "\t" << jobs[index].get_type() << "\t" << jobs[index].get_role();
+        
+            cout<<"\t\t  || LIST OF JOBS ||\n"<<endl;
+            cout.width(5);
+            cout<<"Serial No."<<"|";
+            cout.width(15);
+            cout<<"Location"<<"\t|";
+            cout.width(10);
+            cout<<"Type"<<"   \t|";
+            cout.width(15);
+            cout<<"Role"<<"\t|";
+            cout<<endl;
+            cout<<"-------------------------------------------------------------------------"<<endl;
+
+            int index = 1;
+            for(auto job: jobs){
+                cout.width(5);
+                cout<<index++<<" \t  |";
+                cout.width(15);
+                cout<<job.get_location()<<"\t|";
+                cout.width(10);
+                cout<<job.get_type()<<"\t|";
+                cout.width(15);
+                cout<<job.get_role()<<"\t|";
+                cout<<endl;
             }
-            cout << "Enter serial number of the internship you wish to see in detail and 0 if you wish to skip";
+            cout<<"\n"<<endl;
+            cout<<"=========================================================================="<<endl;
+            
+
+            cout << "Enter serial number of the internship to see in detail\n(0 if you wish to skip): ";
             cin >> index;
+            cout<<"=========================================================================="<<endl;
             if (index){
                 cout << jobs[index - 1];
             }
         }
 
-        friend ostream operator <<(ostream& out,Company& company);    
+        friend ostream& operator <<(ostream& out,Company& company);    
         friend void display_companies(vector<Company> &Companies);
+        friend void display_line(int line);
 };
 
-ostream operator<<(ostream& out,Company& company){
-    cout<<"\tCOMPANY DETAILS"<<endl;
-    cout<<"Name: "<<company.get_name()<<endl;
-    cout<<"Location: "<<company.get_location()<<endl;
-    cout<<"Branch Preferred: "<<company.get_branch()<<endl;
-    cout<<"Total Offers made: "<<company.get_total_offers()<<endl;
+ostream& operator<<(ostream& out,Company& company){
+    out<<"\t\t || COMPANY DETAILS ||\n"<<endl;
+    out<<"Name: "<<company.get_name()<<endl;
+    out<<"Location: "<<company.get_location()<<endl;
+    out<<"Branch Preferred: "<<company.get_branch()<<endl;
+    out<<"Total Offers made: "<<company.get_total_offers()<<endl;
+
 }
 
 #endif

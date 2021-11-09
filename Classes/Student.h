@@ -32,14 +32,15 @@ class Student{
 
         friend ostream& operator<<(ostream& out,Student&);
         friend bool operator > (Student&,Student&);
-        void add_programmes()
-        {
+
+        void add_programmes(){
+
             bool flag=true;
             char c;
             Program *prog=new Program();
-            cout<<"Enter the program details in which he/she has applied:"<<endl;
-            while(flag)
-            {
+            cout<<"Enter the program details which you want to add:"<<endl;
+            
+            while(flag){
                 cout<<"Enter the program name: ";
                 cin>>prog->name;
                 cout<<"Enter the program type: ";
@@ -48,15 +49,17 @@ class Student{
                 cin>>prog->seats;
                 cout<<"Enter the duration of programme: ";
                 cin>>prog->duration;
-                cout<<"DO you want to continue? y/n: ";
+                cout<<"Do you want to add more programs? (y/n): ";
                 cin>>c;
                 s.push_back(prog);
-                if(c=='n')
-                flag=false;
+                if(c=='n'){
+                    flag=false;
+                }
             }
         }
-        void show_program()
-        {
+
+        void show_program(){
+            
             cout<<"The program details are as follows:-"<<endl;
             cout<<"Program Name\tProgram Type\tTotal Seats\tProgram Duration"<<endl;
             for(int i=0;i<s.size();i++)

@@ -41,10 +41,10 @@ class Job:public Offer {
         }
 
         friend class Company; 
-        friend ostream operator <<(ostream&, Job&);
+        friend ostream& operator <<(ostream&, Job&);
 };
 
-ostream operator<<(ostream& out, Job& job){
+ostream& operator<<(ostream& out, Job& job){
     out<<"|| JOB DETAILS ||"<<endl;
     out<<"Role: "<<job.role<<endl;
     out<<"Amount: "<<job.amount<<endl;

@@ -30,7 +30,7 @@ class Student{
             program_count = _program_count;
         }
 
-        friend ostream operator<<(ostream& out,Student&);
+        friend ostream& operator<<(ostream& out,Student&);
         friend bool operator > (Student&,Student&);
         void add_programmes()
         {
@@ -69,7 +69,7 @@ class Student{
          friend void  delete_student(vector <Student>& student,string roll);
 };
 
-ostream operator<<(ostream& out,Student& student){
+ostream& operator<<(ostream& out,Student& student){
     cout<<"\t|| STUDENT DETAILS ||"<<endl;
     cout<<"Name: "<<student.name<<endl;
     cout<<"Roll Number: "<<student.roll_number<<endl;

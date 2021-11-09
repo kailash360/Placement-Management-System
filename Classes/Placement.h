@@ -5,17 +5,20 @@ class Placement
     double average;
     double highest;
     int year,total_placed,total_appeared,year;
-    Placement(int average,double highest, int year)
+    Placement(int average,double highest, int year,int total_placed, int total_appeared)
     {
         this->average = average;
         this->highest = highest;
         this->year= year;
+        this->total_placed = total_placed;
+        this->total_appeared = total_appeared;
     }
     void percentage_placed()
     {
         double per=(total_placed/total_appeared)*100;
         cout<<"Percentage of Students Placed: "<<per<<endl;
     }
+    friend class College;
  friend ostream operator<<(ostream& out,Placement& p);
 };
 ostream operator<<(ostream& out,Placement &p){

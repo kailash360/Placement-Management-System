@@ -17,7 +17,7 @@ class Company{
         vector<Job>jobs;
         vector<Internship>internships;
     public:
-        Company(string _company_name, string _company_location, string _company_branch,vector<Job>& _jobs,vector <Internship>& _internships,int _total_offers = 0){
+        Company(string _company_name, string _company_location, string _company_branch,vector<Job>& _jobs,vector <Internship>& _internships,int _total_offers=0){
             company_name=_company_name;
             company_location=_company_location;
             company_branch=_company_branch;
@@ -44,6 +44,12 @@ class Company{
 
         int get_total_offers(){
             return total_offers;
+        }
+        void get_job(int choice){
+            cout<<jobs[choice -1];
+        }
+        void get_internship(int choice){
+            cout<<internships[choice -1];
         }
 
         void append_job(){
@@ -76,11 +82,11 @@ class Company{
             cin >> _amount;
             cout << "Enter location:\n";
             cin >> _location;
-            cout << "Type of job remote/on-site:\n";
+            cout << "Type of internship remote/on-site:\n";
             cin >> _type;
             cout << "Enter the role at the company\n";
             cin >> _role;
-            cout << "Enter the number of programs of student\n";
+            cout << "Enter the number of programs of student required\n";
             cin >> _program_count;
             Internship new_internship(_amount, _location, _type, _role, _program_count);
             internships.push_back(new_internship);
@@ -94,7 +100,7 @@ class Company{
             jobs.erase(jobs.begin() + (index - 1));
         }
 
-        void delete_intership(){
+        void delete_internship(){
             int index;
             display_internship();
             cout << "Enter the serial number of the internship you wish to delete: ";
@@ -102,27 +108,21 @@ class Company{
             internships.erase(internships.begin() + (index - 1));
         }
 
-        void update_job_salary(){
-            int index, _salary;
-            display_job();
-            cout << "Enter the serial number of the job whose salary you wish to update:";
-            cin >> index;
+        void update_job_salary(int choice){
+            int _salary;
             cout << "Enter the new salary";
             cin >> _salary;
-            jobs[index-1].set_amount(_salary);
+            jobs[choice-1].set_amount(_salary);
         }
 
-        void update_internship_salary(){
-            int index, _salary;
-            display_job();
-            cout << "Enter the serial number of the internship whose salary you wish to update:";
-            cin >> index;
+        void update_internship_salary(int choice){
+            int  _salary;
             cout << "Enter the new salary";
             cin >> _salary;
-            internships[index-1].set_amount(_salary);
+            internships[choice-1].set_amount(_salary);
         }
 
-        void display_internship(){
+        void display_internship(int owner=0){
         
             cout<<"\t\t  || LIST OF INTERNSHIPS ||\n"<<endl;
             cout.width(5);
@@ -148,19 +148,21 @@ class Company{
                 cout<<internship.get_role()<<"\t|";
                 cout<<endl;
             }
-            cout<<"\n"<<endl;
-            cout<<"=========================================================================="<<endl;
-        
+            if(!owner){
+                cout<<"\n"<<endl;
+                cout<<"=========================================================================="<<endl;
+            
 
-            cout << "Enter serial number of the internship to see in detail\n(0 if you wish to skip): ";
-            cin >> index;
-            cout<<"=========================================================================="<<endl;
-            if (index){
-                cout << (internships[index - 1]);
+                cout << "Enter serial number of the internship to see in detail\n(0 if you wish to skip): ";
+                cin >> index;
+                cout<<"=========================================================================="<<endl;
+                if (index){
+                    cout << (internships[index - 1]);
+                }
             }
         }
 
-        void display_job(){
+        void display_job(int owner=0){
         
             cout<<"\t\t  || LIST OF JOBS ||\n"<<endl;
             cout.width(5);
@@ -186,15 +188,15 @@ class Company{
                 cout<<job.get_role()<<"\t|";
                 cout<<endl;
             }
-            cout<<"\n"<<endl;
-            cout<<"=========================================================================="<<endl;
-            
-
-            cout << "Enter serial number of the job to see in detail\n(0 if you wish to skip): ";
-            cin >> index;
-            cout<<"=========================================================================="<<endl;
-            if (index){
-                cout << jobs[index - 1];
+            if(!owner){  
+                cout<<"\n"<<endl;
+                cout<<"=========================================================================="<<endl;
+                cout << "Enter serial number of the job to see in detail\n(0 if you wish to skip): ";
+                cin >> index;
+                cout<<"=========================================================================="<<endl;
+                if (index){
+                    cout << jobs[index - 1];
+                }
             }
         }
 

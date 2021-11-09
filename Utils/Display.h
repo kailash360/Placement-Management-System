@@ -3,7 +3,6 @@
 
 #include "../Classes/Company.h"
 #include "../Classes/Job.h"
-#include "../Classes/Company.h"
 #include "../Classes/College.h"
 using namespace std;
 

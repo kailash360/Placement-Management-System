@@ -5,11 +5,13 @@ class Placement
     double average;
     double highest;
     int year,total_placed,total_appeared,year;
-    Placement(int average,double highest, int year)
+    Placement(int average,double highest, int year,int total_placed, int total_appeared)
     {
         this->average = average;
         this->highest = highest;
         this->year= year;
+        this->total_placed = total_placed;
+        this->total_appeared = total_appeared;
     }
     void percentage_placed()
     {

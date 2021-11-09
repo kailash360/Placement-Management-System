@@ -7,9 +7,19 @@
 #include "../Classes/College.h"
 using namespace std;
 
-void display_companies(vector<Company>&);
-void display_line(int);
+void display_line(int choice){
+    switch(choice){
+        case 1: 
+            cout<<"==================================================="<<endl;
+            break;
+        case 2: 
+            cout<<"---------------------------------------------------"<<endl;
+            break;
+        default: 
+            cout<<"==========================================="<<endl;
 
+    }
+}
 
 void display_companies(vector<Company> &Companies){
     cout<<"\t  || LIST OF COMPANIES ||\n"<<endl;
@@ -61,19 +71,6 @@ void display_college_list(vector <College> &Colleges){
     display_line(1);
 }
 
-void display_line(int choice){
-    switch(choice){
-        case 1: 
-            cout<<"==================================================="<<endl;
-            break;
-        case 2: 
-            cout<<"---------------------------------------------------"<<endl;
-            break;
-        default: 
-            cout<<"==========================================="<<endl;
-
-    }
-}
 
 
 #endif

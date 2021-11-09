@@ -6,7 +6,12 @@
 #include "Placement.h"
 using namespace std;
 
+
 // #include"Placements.h"
+
+#ifndef COLLEGE_H
+#define COLLEGE_H
+
 class College{
     string college_name;
     string college_location;
@@ -35,7 +40,6 @@ class College{
         string get_location(){
             return college_location;
         }
-    
     void add_placement_stats()
     {
         double average;
@@ -82,10 +86,12 @@ class College{
     }
           // List of companies which have visited college 
         void append_companies(){
+
             string newcompany;
             cout<<"enter the company name: ";getline(cin,newcompany);
             college_companies.push_back(newcompany);
             cout<<"added new companyin records"<<endl;
+
         }
         struct less_than_key
         {
@@ -123,3 +129,4 @@ ostream& operator<<(ostream&out,College& college){
     }
 }
 #endif
+

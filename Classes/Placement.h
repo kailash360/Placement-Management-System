@@ -3,6 +3,9 @@
 
 #include<bits/stdc++.h>
 using namespace std;
+
+#ifndef PLACEMENT_H
+#define PLACEMENT_H
 class Placement
 {
     double average;

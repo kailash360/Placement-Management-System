@@ -7,7 +7,6 @@
 using namespace std;
 
 // #include"Placements.h"
-
 class College{
     string college_name;
     string college_location;
@@ -85,8 +84,28 @@ class College{
         void append_companies(){
             string newcompany;
             cout<<"enter the company name: ";getline(cin,newcompany);
+            college_companies.push_back(newcompany);
+            cout<<"added new companyin records"<<endl;
         }
-
+        struct less_than_key
+        {
+        inline bool operator() (const Placement& struct1, const Placement& struct2)
+         {
+             return (struct1.year < struct2.year);
+         }
+        };
+       
+        void placement_history()
+        {
+            sort(p.begin(), p.end(), less_than_key());
+            for(int i = p.size()-1; i>=0;i--)
+            {
+                cout<<"YEAR "<<p[i]->year<<endl;
+                display_line(2);
+                cout<<"average salary\thighest package offered\ttotal number of candidates occured\ttotal number of candidates placed"<<endl;
+                cout<<p[i]->average<<"LPA\t      "<<p[i]->highest<<"LPA\t\t    "<<p[i]->total_appeared<<"\t\t      "<<p[i]->total_placed<<endl;
+            }
+        }
         friend ostream& operator<<(ostream&out,College& college);
 };
 
@@ -102,5 +121,4 @@ ostream& operator<<(ostream&out,College& college){
         cout<<sr_no++<<". "<<item<<endl;
     }
 }
-
 #endif

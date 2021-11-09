@@ -1,7 +1,9 @@
 #include <iomanip>
 #include "./Menu/Student_Menu.h"
+#include "./Menu/College_Menu.h"
 #include "./Utils/File.h"
 #include "./Utils/Display.h"
+#include "./Utils/Display_College.h"
 using namespace std;
 
 int main(){
@@ -23,6 +25,8 @@ int main(){
         case 1: 
             Student_Menu(companies,colleges);
             break;
+        case 3:
+            College_Menu(colleges);
         default:
             cout<<"Invalid choice"<<endl;
     }

@@ -30,8 +30,6 @@ class Student{
             program_count = _program_count;
         }
 
-        friend ostream& operator<<(ostream& out,Student&);
-        friend bool operator > (Student&,Student&);
 
         void add_programmes(){
 
@@ -69,7 +67,11 @@ class Student{
                 cout<<s[i]->duration<<endl;
             }
         }
-         friend void  delete_student(vector <Student>& student,string roll);
+        
+        friend void delete_student(vector <Student>& student,string roll);
+        friend ostream& operator<<(ostream& out,Student&);
+        friend bool operator > (Student&,Student&);
+        friend void display_students(vector <Student>& Students);
 };
 
 ostream& operator<<(ostream& out,Student& student){
@@ -113,19 +115,15 @@ bool operator > (Student& student1,Student& student2){
         return false;
     }
 }
-void delete_student(vector <Student> &s, string roll)
-{
-    for(int i=0;i<s.size();i++)
-    {
-        if(s[i].roll_number==roll)
-        {
-            for(int j=i;j<s.size()-1;j++)
-            {
+void delete_student(vector <Student> &s, string roll){
+    for(int i=0;i<s.size();i++){
+        if(s[i].roll_number==roll){
+            for(int j=i;j<s.size()-1;j++){
                 s[j]=s[j+1];
             }
         }   
     }
-    cout<<"deleted the records of student successfully"<<endl;
+    cout<<"Deleted the records of student successfully"<<endl;
 }
 
 #endif

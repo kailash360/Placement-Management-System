@@ -6,8 +6,8 @@ using namespace std;
 
 class Program{
     private:
-        string name, type, seats;
-        int duration;
+        string name, type;
+        int duration, seats;
 
     public:
         // Program(string _program_name, int _duration, string _type)
@@ -16,21 +16,20 @@ class Program{
         //     duration = _duration;
         //     type = _type;
         // }
-        void get_program_name()
-        {
+        string get_name(){
             cout << name << endl;
         }
-        void get_duration()
-        {
-            cout << duration << endl;
+        int get_duration(){
+            return duration;
         }
-        void get_type()
-        {
-            cout << type << endl;
+        string get_type(){
+            return type;
         }
-        void set_seats()
-        {
-            cin >> seats;
+        int get_seats(){
+            return seats;
+        }
+        void set_seats(int _seats){
+            seats = _seats;
         }
         friend class Student;
 };

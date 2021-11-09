@@ -11,8 +11,8 @@ using namespace std;
 class College{
     string college_name;
     string college_location;
-    vector <string> college_branch;
     vector <string> college_companies;
+    int index=1;
     vector <Placement*> p;
     int students;
 
@@ -22,6 +22,11 @@ class College{
             college_name=_college_name;
             college_location=_college_location;
             students=_students;
+            college_companies.push_back("Google"); 
+            college_companies.push_back("RedHat"); 
+            college_companies.push_back("Uber"); 
+            college_companies.push_back("IBM"); 
+            college_companies.push_back("Flipkart"); 
         }
     
     void add_placement_stats()
@@ -56,7 +61,7 @@ class College{
     }
     void show_placement_stat()
     {
-         int year;
+        int year;
         cout<<"enter the year of which you want to see the placement stat: ";
         cin>>year;
         for(int i=0;i<p.size();i++)
@@ -68,21 +73,25 @@ class College{
             }
         }
     }
+          // List of companies which have visited college 
+        void append_companies(){
+            string newcompany;
+            cout<<"enter the company name: ";getline(cin,newcompany);
 
+        }
         void get_values(){
-            cout<<"college Name- "<<college_name<<endl;
-            cout<<"college Location- "<<college_location<<endl;
-            cout<<"Number of students- "<<students<<endl;
-            cout<<"List of companies visiting college- "<<endl;
+        cout.width(5);
+        cout<<index++<<" \t  |";
+        cout.width(15);
+        cout<<college_name<<"\t|";
+        cout.width(10);
+        cout<<college_location<<"\t|";
+        cout<<endl;
+        cout<<"Companies Visited in This COllege:-"<<endl;
             int sr_no=1;
             for (auto item:college_companies){
-                cout<<sr_no<<"\t"<<item;
+                cout<<sr_no++<<"\t"<<item;
             }
-        }
-
-        // List of companies which have visited college 
-        void append_companies(){
-
         }
 };
 

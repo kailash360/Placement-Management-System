@@ -20,7 +20,7 @@ public:
     }
     string get_name()
     {
-        cout << name << endl;
+        return name;
     }
 
     int get_duration()

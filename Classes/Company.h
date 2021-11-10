@@ -265,6 +265,7 @@ ostream &operator<<(ostream &out, Company &company)
     out << "Location: " << company.get_location() << endl;
     out << "Branch Preferred: " << company.get_branch() << endl;
     out << "Total Offers made: " << company.get_total_offers() << endl;
+    return out;
 }
 
 #endif

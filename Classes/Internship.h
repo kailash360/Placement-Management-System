@@ -33,12 +33,13 @@ public:
 
 ostream &operator<<(ostream &out, Internship &internship)
 {
-    cout << "\t|| INTERNSHIP DETAILS ||" << endl;
-    cout << "Amount: " << internship.amount << endl;
-    cout << "Location: " << internship.location << endl;
-    cout << "Type: " << internship.type << endl;
-    cout << "Role: " << internship.role << endl;
-    cout << "Program Count: " << internship.program_count << endl;
+    out << "\t|| INTERNSHIP DETAILS ||" << endl;
+    out << "Amount: " << internship.amount << endl;
+    out << "Location: " << internship.location << endl;
+    out << "Type: " << internship.type << endl;
+    out << "Role: " << internship.role << endl;
+    out << "Program Count: " << internship.program_count << endl;
+    return out;
 }
 
 #endif

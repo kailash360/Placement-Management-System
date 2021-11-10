@@ -147,14 +147,15 @@ class Student{
 
 ostream &operator<<(ostream &out, Student &student)
 {
-    cout << "\t|| STUDENT DETAILS ||" << endl;
-    cout << "Name: " << student.name << endl;
-    cout << "Roll Number: " << student.roll_number << endl;
-    cout << "College: " << student.college << endl;
-    cout << "Course: " << student.course << endl;
-    cout << "Course Duration: " << student.course_duration << endl;
-    cout << "CGPA: " << student.cgpa << endl;
-    cout << "Number of programs enrolled: " << student.program_count << endl;
+    out << "Name: " << student.name << endl;
+    out << "Roll Number: " << student.roll_number << endl;
+    out << "\t|| STUDENT DETAILS ||" << endl;
+    out << "College: " << student.college << endl;
+    out << "Course: " << student.course << endl;
+    out << "Course Duration: " << student.course_duration << endl;
+    out << "CGPA: " << student.cgpa << endl;
+    out << "Number of programs enrolled: " << student.program_count << endl;
+    return out;
 }
 
 bool operator>(Student &student1, Student &student2)

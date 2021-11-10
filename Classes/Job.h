@@ -62,6 +62,7 @@ ostream &operator<<(ostream &out, Job &job)
     out << "Location: " << job.location << endl;
     out << "Type: " << job.type << endl;
     out << "Required Experience: " << job.required_experience << "years" << endl;
+    return out;
 }
 
 #endif

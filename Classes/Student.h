@@ -30,10 +30,6 @@ class Student{
             program_count = _program_count;
             programs.push_back(p);
         }
-    void initialize_programs(vector <Program*> &p)
-    {
-        
-    }
     void set_roll_number(string _roll_number)
     {
         roll_number = _roll_number;

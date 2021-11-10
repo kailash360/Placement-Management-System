@@ -5,6 +5,31 @@ using namespace std;
 #ifndef STUDENT_H
 #define STUDENT_H
 
+class Student{
+    
+    private:
+        string roll_number;
+        string name;
+        int age;
+        string college;
+        string course;
+        int course_duration;
+        double cgpa;
+        int program_count;
+        vector <Program*> programs;
+
+    public:
+        Student(string _roll_number,string _name,int _age,string _college,string _course,int _course_duration,double _cgpa,int _program_count){
+            roll_number = _roll_number;
+            name = _name;
+            age=_age;
+            college = _college;
+            course = _course;
+            course_duration = _course_duration;
+            cgpa = _cgpa;
+            program_count = _program_count;
+        }
+
 class Student
 {
 
@@ -19,6 +44,41 @@ private:
     int program_count;
     vector<Program *> s;
 
+
+        void add_programmes(){
+
+            bool flag=true;
+            char c;
+            Program *prog=new Program();
+            cout<<"Enter the program details which you want to add:"<<endl;
+            
+            while(flag){
+                cout<<"Enter the program name: ";
+                cin>>prog->name;
+                cout<<"Enter the program type: ";
+                cin>>prog->type;
+                cout<<"Enter total number of seats available: ";
+                cin>>prog->seats;
+                cout<<"Enter the duration of programme: ";
+                cin>>prog->duration;
+                cout<<"Do you want to add more programs? (y/n): ";
+                cin>>c;
+                programs.push_back(prog);
+                if(c=='n'){
+                    flag=false;
+                }
+            }
+        }
+
+        void show_program(){
+            
+            cout<<"The program details are as follows:-"<<endl;
+            cout<<"Program Name\tProgram Type\tTotal Seats\tProgram Duration"<<endl;
+            for(int i=0;i<programs.size();i++)
+            {
+                cout<<programs[i]->name<<"\t     "<<programs[i]->type<<"\t     ";
+                cout<<programs[i]->seats<<"\t      ";
+                cout<<programs[i]->duration<<endl;
 public:
     Student(string _roll_number, string _name, int _age, string _college, string _course, int _course_duration, double _cgpa, int _program_count)
     {
@@ -200,6 +260,13 @@ bool operator>(Student &student1, Student &student2)
         return false;
     }
 }
+
+void delete_student(vector <Student> &programs, string roll){
+    for(int i=0;i<programs.size();i++){
+        if(programs[i].roll_number==roll){
+            for(int j=i;j<programs.size()-1;j++){
+                programs[j]=programs[j+1];
+
 void delete_student(vector<Student> &s, string roll)
 {
     for (int i = 0; i < s.size(); i++)

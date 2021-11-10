@@ -103,15 +103,19 @@ public:
         int year;
         cout << "enter the year of which you want to see the placement stat: ";
         cin >> year;
+        cout<<endl<<"\t\t\t\t  || PLACEMENT STAT ||\n"<<endl;
+        cout<<"=========================================================================================================="<<endl<<endl;
         for (int i = 0; i < placements.size(); i++)
         {
             if (placements[i].year == year)
             {
-                cout<<"average salary\thighest package offered\ttotal number of candidates occured\ttotal number of candidates placed"<<endl;
-                cout<<placements[i].average<<"LPA\t        "<<placements[i].highest<<"LPA\t\t   "<<placements[i].total_appeared<<"\t\t     "<<placements[i].total_placed<<endl;
-                cout << "average salary\thighest package offered\ttotal number of candidates occured\ttotal number of candidates placed" << endl;
-                cout << placements[i].average << "LPA\t      " << placements[i].highest << "LPA\t\t    " << placements[i].total_appeared << "\t\t      " << placements[i].total_placed << endl;
-            }
+                cout<<"Average Salary"<<"    |    ";
+                cout<<"Highest Package Offered"<<"    |    ";
+                cout<<"Candidates Appeared"<<"    |";
+                cout<<"\tCandidates Placed"<<"     |"<<endl<<endl;
+                cout<<"---------------------------------------------------------------------------------------------------------------------------"<<endl;
+                cout<<endl;
+               cout<<placements[i].average<<"LPA\t\t\t   "<<placements[i].highest<<"LPA\t\t\t "<<placements[i].total_appeared<<"\t\t\t    "<<placements[i].total_placed<<endl;            }
         }
     }
     // List of companies which have visited college

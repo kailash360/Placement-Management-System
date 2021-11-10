@@ -8,7 +8,7 @@ using namespace std;
 #include "../Classes/College.h"
 #include "../Classes/Job.h"
 #include "../Classes/Internship.h"
-
+#include "../Classes/Program.h"
 
 void tokenize_student(string s,vector<Student> &data){
 
@@ -19,14 +19,19 @@ void tokenize_student(string s,vector<Student> &data){
     stringstream check1(s);
       
     string intermediate;
-      
+      vector <Program*> dummy;
+      dummy.push_back(new Program("MLSA","Paid", 25, 6));
+      dummy.push_back(new Program("GSoC","Paid", 20, 6));
+      dummy.push_back(new Program("HacktoberFest","Unpaid", 150, 1));
+      dummy.push_back(new Program("GWOC","Unpaid", 150, 1));
     // Tokenizing w.r.t. ','
     while(getline(check1, intermediate, ',')){
         row.push_back(intermediate);
     }
 
     //Push the tokens to the data
-    Student* student = new Student(row[0],row[1],stoi(row[2]),row[3],row[4],stoi(row[5]),stod(row[6]),stoi(row[7]));
+
+    Student* student = new Student(row[0],row[1],stoi(row[2]),row[3],row[4],stoi(row[5]),stod(row[6]),stoi(row[7]),dummy[rand() % dummy.size()]);
     data.push_back(*student);
 }
 

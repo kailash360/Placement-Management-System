@@ -11,12 +11,13 @@ private:
     int duration, seats;
 
 public:
-    // Program(string _program_name, int _duration, string _type)
-    // {
-    //     program_name = _program_name;
-    //     duration = _duration;
-    //     type = _type;
-    // }
+    Program(string _program_name, string _type,int _seats,  int _duration )
+    {
+        name = _program_name;
+        duration = _duration;
+        type = _type;
+        seats=_seats;
+    }
     string get_name()
     {
         cout << name << endl;

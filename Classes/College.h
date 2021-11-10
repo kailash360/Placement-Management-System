@@ -163,13 +163,14 @@ public:
 ostream& operator<<(ostream&out,College& college){
     cout<<"\t || COLLEGE DETAILS ||"<<endl;
     college.initialise_companies(college.college_companies);
-    cout<<"Serial No."<<college.index++<<endl;
-    cout<<"College Name"<<college.college_name<<endl;
-    cout<<"Location"<<college.college_location<<endl;
-    cout<<"Companies that visited "<<college.college_name<<": "<<endl;
+    out<<"Serial No."<<college.index++<<endl;
+    out<<"College Name"<<college.college_name<<endl;
+    out<<"Location"<<college.college_location<<endl;
+    out<<"Companies that visited "<<college.college_name<<": "<<endl;
     int sr_no=1;
     for (auto item:college.college_companies){
         cout<<sr_no++<<". "<<item<<endl;
     }
+    return out;
 }
 #endif

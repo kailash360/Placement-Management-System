@@ -79,10 +79,11 @@ class Placement
 };
 ostream &operator<<(ostream &out, Placement &p)
 {
-    cout << "\t|| STUDENT DETAILS ||" << endl;
-    cout << "Highest Package: " << p.highest << endl;
-    cout << "Overall Average Package: " << p.average << endl;
-    cout << "Total Number of Students Occurred: " << p.total_appeared << endl;
+    out << "\t|| STUDENT DETAILS ||" << endl;
+    out << "Highest Package: " << p.highest << endl;
+    out << "Overall Average Package: " << p.average << endl;
+    out << "Total Number of Students Occurred: " << p.total_appeared << endl;
+    return out;
 }
 
 #endif

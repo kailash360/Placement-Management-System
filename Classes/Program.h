@@ -52,7 +52,7 @@ public:
         name = _name;
     }
 
-    void set_seats(int _duration)
+    void set_duration(int _duration)
     {
         duration = _duration;
     }

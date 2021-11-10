@@ -8,43 +8,41 @@
 
 
 void Student_Details_Menu (vector <Student> &Students){
-     display_students(Students);
-     cout<<"Choose from the following:\n1)See student in detail\n2)Compare two students\n3)Return to previous menu\n->";
-     int choice;
-     cin>>choice;
-     switch (choice)
-     {
-     case 1:
-         int index;
-         cout<<"Enter the serial number of the student whom you want to see in detail: ";
-         cin>>index;
-         cout<<Students[index-1];
-         break;
-     case 2:
+    display_students(Students);
+     
+    cout<<"Choose from the following:\n1.See student in detail\n2.Compare two students\n3.Return to previous menu\n->";
+    int choice;
+    cin>>choice;
+    switch (choice)
+    {
+    case 1:
+        int index;
+        cout<<"Enter the serial number of the student whom you want to see in detail: ";
+        cin>>index;
+        cout<<Students[index-1];
+        break;
+    case 2:
         int index1,index2;
-         cout<<"Enter the serial number of the students whom you want to compare: ";
-         cin>>index1>>index2;
-         if(Students[index1-1]>Students[index2-1]){
-             cout<<"Student 1 is better than Student 2";
-             cout<<Students[index1-1];
-         }
-         else{
-             cout<<"Student 2 is better than Student 1";
-             cout<<Students[index2-1];
-         }
-         
-
-     default:
-         break;
-     }
+        cout<<"Enter the serial number of the students whom you want to compare: ";
+        cin>>index1>>index2;
+        cout<<"Result: ";
+        if(Students[index1-1]>Students[index2-1]){
+            cout<<"Student 1 is better than Student 2\n";
+            cout<<Students[index1-1];
+        }else{
+            cout<<"Student 2 is better than Student 1\n";
+            cout<<Students[index2-1];
+        }
+        break;
+    case 3:
+        return;
+        
+    default:
+        cout<<"Invalid choice"<<endl;
+        break;
+    }
      
 }
-
-
-
-
-
-
 
 void Company_Details_Menu(vector<Company> &Companies,vector<College> &Colleges){
 
@@ -161,6 +159,7 @@ void Company_Details_Menu(vector<Company> &Companies,vector<College> &Colleges){
 void Company_Menu(vector<Company> &Companies,vector<College> &Colleges,vector <Student> &Students){
     while(true){
         int choice;
+        cout<<"==================================================="<<endl;
         cout<<"Choose the following: \n1)Student Details\n2)Company Details\n->";
         cin>>choice;
         switch (choice)

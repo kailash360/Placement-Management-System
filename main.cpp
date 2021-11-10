@@ -14,6 +14,8 @@ int main(){
 
     read_file(students,companies,colleges);
 
+    display_project_name();
+
     int option;
     display_line(1);
     cout<<"Choose from the following:\n";

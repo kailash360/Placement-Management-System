@@ -128,13 +128,14 @@ class Student{
 
     void show_program()
     {
-
-        cout << "The program details are as follows:-" << endl;
-        cout << "Program Name\tProgram Type\tTotal Seats\tProgram Duration" << endl;
+        cout<<endl<<"\t\t\t\t  || PLACEMENT STAT ||\n"<<endl;
+        cout<<"=========================================================================================================="<<endl<<endl;
+        cout << "   Program Name\t|\tProgram Type\t|\tTotal Seats\t|\tProgram Duration\t|" << endl;
+         cout<<"---------------------------------------------------------------------------------------------------------------------------"<<endl;
         for (int i = 0; i < programs.size(); i++)
         {
-            cout << programs[i]->name << "\t\t  " << programs[i]->type << "\t\t     ";
-            cout << programs[i]->seats << "\t\t      ";
+            cout <<"       "<< programs[i]->name << "\t\t   " << programs[i]->type << "\t\t\t  ";
+            cout << programs[i]->seats << "\t\t\t    ";
             cout << programs[i]->duration << endl;
         }
     }

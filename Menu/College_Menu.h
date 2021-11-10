@@ -10,21 +10,22 @@ void College_Menu(vector<College> &Colleges)
     bool flag=true;
         int choice, choice1;
         display_college_list(Colleges);
+        cout<<"Enter the serial number of your college: ";
+        cin>>choice;
         while(flag)
         {
-        cout<<"enter the college to select via index position: ";cin>>choice;
         cout<<"Choose any one category to see"<<endl;
-        cout<<"1. Display placement history\n2. To see placement stat of a particular year\n3. To add new companies visited recently\n4. To add new placement stat\n5. To exit\n Enter your choice: ";
+        cout<<"1. Display placement history\n2. See placement stats of a particular year\n3. Add new companies visited recently\n4. Add new placement stat\n5. Exit\nEnter your choice: ";
         cin>>choice1;
         switch(choice1)
         {
-            case 1:Colleges[choice].placement_history();
+            case 1:Colleges[choice-1].placement_history();
             break;
-            case 2:Colleges[choice].show_placement_stat();
+            case 2:Colleges[choice-1].show_placement_stat();
             break; 
-            case 3:Colleges[choice].append_companies();
+            case 3:Colleges[choice-1].append_companies();
             break;
-            case 4:Colleges[choice].add_placement_stats();
+            case 4:Colleges[choice-1].add_placement_stats();
             break;
             case 5:cout<<"Thankyou"<<endl; 
             flag=false;

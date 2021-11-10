@@ -14,7 +14,7 @@ void offer_menu(vector<Company> &Companies){
         int offer = 1;
         display_line(1);
         cout<<"Choose the number of what you want to see:"<<endl;
-        cout<<"1.Jobs\n2.Internships\n3.Return to previous menu\n->";
+        cout<<"1.Jobs\n2.Internships\n3.Return to previous menu\n4.Exit\n->";
         cin>>offer;
         display_line(1);
 
@@ -45,10 +45,12 @@ void offer_menu(vector<Company> &Companies){
                 Companies[selected_company - 1].display_internship();
                 break;
             case 3:
-                cout<<"Thank You"<<endl;
                 return;
+            case 4:
+                display_thank_you();
+                exit(0);
             default: 
-                cout<<"Invalid offer"<<endl;
+                cout<<"Invalid choice"<<endl;
         }
     }
 
@@ -62,7 +64,7 @@ void college_details_menu(vector<College> &Colleges,int selected_college){
         int option = 1;
         display_line(1);
         cout<<"Choose the number of what you want to see:"<<endl;
-        cout<<"1.College Details\n2.Placement History\n3.Placement Details of a particular year\n4.Return to previous menu\n->";
+        cout<<"1.College Details\n2.Placement History\n3.Placement Details of a particular year\n4.Return to previous menu\n5.Exit\n->";
         cin>>option;
         display_line(1);
 
@@ -80,6 +82,9 @@ void college_details_menu(vector<College> &Colleges,int selected_college){
                 break;          
             case 4:
                 return;
+            case 5:
+                display_thank_you();
+                exit(0);
             default:
                 cout<<"Invalid choice"<<endl;
         }
@@ -100,7 +105,7 @@ void student_details_menu(vector<Student> &Students){
         int option = 1;
         display_line(1);
         cout<<"Choose the number of what you want to see:"<<endl;
-        cout<<"1.My Details\n2.My Programs\n3.Add new program\n4.Return to previous menu\n->";
+        cout<<"1.My Details\n2.My Programs\n3.Add new program\n4.Return to previous menu\n5.Exit\n->";
         cin>>option;
         display_line(1);
 
@@ -118,6 +123,9 @@ void student_details_menu(vector<Student> &Students){
                 break;          
             case 4:
                 return;
+            case 5:
+                display_thank_you();
+                exit(0);
             default:
                 cout<<"Invalid choice"<<endl;
         }
@@ -151,7 +159,7 @@ void Student_Menu(vector<Student> &Students,vector<Company> &Companies, vector<C
                 student_details_menu(Students);
                 break;
             case 4:
-                cout<<"Thank You"<<endl;
+                display_thank_you();
                 exit(0);
             default:
                 cout<<"Invalid choice"<<endl;

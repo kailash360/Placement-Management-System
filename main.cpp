@@ -27,7 +27,7 @@ int main(){
             Student_Menu(students,companies,colleges);
             break;
         case 2: 
-            Company_Menu(companies,colleges);
+            Company_Menu(companies,colleges,students);
             break;
         case 3:
             College_Menu(colleges);

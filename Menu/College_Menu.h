@@ -8,10 +8,8 @@
 void College_Menu(vector<College> &Colleges)
 {
     bool flag=true;
-        display_line(1);
         int choice, choice1;
         display_college_list(Colleges);
-        display_line(1);
         while(flag)
         {
         cout<<"enter the college to select via index position: ";cin>>choice;

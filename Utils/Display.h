@@ -91,7 +91,7 @@ void display_college_list(vector <College> &Colleges){
         cout<<college.get_location()<<"\t|";
         cout<<endl;
     }
-    cout<<"\n"<<endl;
+    cout<<endl;
     display_line(1);
 }
 

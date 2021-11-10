@@ -19,8 +19,9 @@ int main(){
     cout<<"Choose from the following:\n";
     cout<<"1.Student\n2.Company\n3.College Admin\n->";
     cin>>option;
+    cout<<endl;
     display_line(1);
-
+    cout<<endl;
     switch(option) {
         case 1: 
             Student_Menu(students,companies,colleges);

@@ -9,7 +9,7 @@ class Placement
     double highest;
     int year,total_placed,total_appeared;
     
-    Placement(int average,double highest, int year,int total_placed, int total_appeared){
+    Placement(int year,double average, int highest,int total_placed, int total_appeared){
         this->average = average;
         this->highest = highest;
         this->year= year;

@@ -21,13 +21,19 @@ class College{
             college_name=_college_name;
             college_location=_college_location;
             students=_students;
+        }
+        void initialise_companies(vector <string> &college_companies) {
             college_companies.push_back("Google"); 
             college_companies.push_back("RedHat"); 
             college_companies.push_back("Uber"); 
             college_companies.push_back("IBM"); 
-            college_companies.push_back("Flipkart"); 
+            college_companies.push_back("Flipkart");
         }
-
+        void initialise_placements(vector <Placement> &p) {
+            p.push_back(Placement(2018,10,42,1950,2000)); 
+            p.push_back(Placement(2019,11,50,1700,1800)); 
+            p.push_back(Placement(2020,10,42,1900,2200)); 
+        }
         string get_name(){
             return college_name;
         }
@@ -76,7 +82,7 @@ class College{
             if(p[i].year==year)
             {
                 cout<<"average salary\thighest package offered\ttotal number of candidates occured\ttotal number of candidates placed"<<endl;
-                cout<<p[i].average<<"LPA\t      "<<p[i].highest<<"LPA\t\t    "<<p[i].total_appeared<<"\t\t      "<<p[i].total_placed<<endl;
+                cout<<p[i].average<<"LPA\t        "<<p[i].highest<<"LPA\t\t   "<<p[i].total_appeared<<"\t\t     "<<p[i].total_placed<<endl;
             }
         }
     }
@@ -97,14 +103,21 @@ class College{
        
         void placement_history()
         {
+            initialise_placements(p);
             sort(p.begin(), p.end(), less_than_key());
+            cout<<endl<<"\t\t\t\t  || PLACEMENT HISTORY ||\n"<<endl;
+            cout<<"=========================================================================================================="<<endl<<endl;
+              cout<<"YEAR"<<"    |    ";
+                cout<<"Average Salary"<<"    |    ";
+                cout<<"Highest Package Offered"<<"    |    ";
+                cout<<"Candidates Appeared"<<"    |";
+                cout<<"\tCandidates Placed"<<"     |"<<endl<<endl;
+                cout<<"---------------------------------------------------------------------------------------------------------------------------"<<endl;
+                cout<<endl;
             for(int i = p.size()-1; i>=0;i--)
             {
-                cout<<"YEAR "<<p[i].year<<endl;
-                // display_line(2);
-                //@vedratan
-                cout<<"average salary\thighest package offered\ttotal number of candidates occured\ttotal number of candidates placed"<<endl;
-                cout<<p[i].average<<"LPA\t      "<<p[i].highest<<"LPA\t\t    "<<p[i].total_appeared<<"\t\t      "<<p[i].total_placed<<endl;
+                cout<<p[i].year<<"\t\t  "<<p[i].average<<"LPA\t\t\t   "<<p[i].highest<<"LPA\t\t\t "<<p[i].total_appeared<<"\t\t\t    "<<p[i].total_placed<<endl;
+               
             }
         }
         friend ostream& operator<<(ostream&out,College& college);
@@ -112,7 +125,7 @@ class College{
 
 ostream& operator<<(ostream&out,College& college){
     cout<<"\t || COLLEGE DETAILS ||"<<endl;
-    
+    college.initialise_companies(college.college_companies);
     cout<<"Serial No."<<college.index++<<endl;
     cout<<"College Name"<<college.college_name<<endl;
     cout<<"Location"<<college.college_location<<endl;

@@ -16,7 +16,7 @@ class Student{
         int course_duration;
         double cgpa;
         int program_count;
-        vector <Program*> s;
+        vector <Program*> programs;
 
     public:
         Student(string _roll_number,string _name,int _age,string _college,string _course,int _course_duration,double _cgpa,int _program_count){
@@ -49,7 +49,7 @@ class Student{
                 cin>>prog->duration;
                 cout<<"Do you want to add more programs? (y/n): ";
                 cin>>c;
-                s.push_back(prog);
+                programs.push_back(prog);
                 if(c=='n'){
                     flag=false;
                 }
@@ -60,11 +60,11 @@ class Student{
             
             cout<<"The program details are as follows:-"<<endl;
             cout<<"Program Name\tProgram Type\tTotal Seats\tProgram Duration"<<endl;
-            for(int i=0;i<s.size();i++)
+            for(int i=0;i<programs.size();i++)
             {
-                cout<<s[i]->name<<"\t     "<<s[i]->type<<"\t     ";
-                cout<<s[i]->seats<<"\t      ";
-                cout<<s[i]->duration<<endl;
+                cout<<programs[i]->name<<"\t     "<<programs[i]->type<<"\t     ";
+                cout<<programs[i]->seats<<"\t      ";
+                cout<<programs[i]->duration<<endl;
             }
         }
         
@@ -115,11 +115,11 @@ bool operator > (Student& student1,Student& student2){
         return false;
     }
 }
-void delete_student(vector <Student> &s, string roll){
-    for(int i=0;i<s.size();i++){
-        if(s[i].roll_number==roll){
-            for(int j=i;j<s.size()-1;j++){
-                s[j]=s[j+1];
+void delete_student(vector <Student> &programs, string roll){
+    for(int i=0;i<programs.size();i++){
+        if(programs[i].roll_number==roll){
+            for(int j=i;j<programs.size()-1;j++){
+                programs[j]=programs[j+1];
             }
         }   
     }

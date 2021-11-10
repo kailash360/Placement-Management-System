@@ -20,14 +20,22 @@ public:
         college_name = _college_name;
         college_location = _college_location;
         students = _students;
-    }
-        void initialise_companies(vector <string> &college_companies) {
-            college_companies.push_back("Google"); 
+         college_companies.push_back("Google"); 
             college_companies.push_back("RedHat"); 
             college_companies.push_back("Uber"); 
             college_companies.push_back("IBM"); 
             college_companies.push_back("Flipkart");
-        }
+            placements.push_back(Placement(2018,10,42,1950,2000)); 
+            placements.push_back(Placement(2019,11,50,1700,1800)); 
+            placements.push_back(Placement(2020,10,42,1900,2200)); 
+    }
+        // void initialise_companies(vector <string> &college_companies) {
+        //     college_companies.push_back("Google"); 
+        //     college_companies.push_back("RedHat"); 
+        //     college_companies.push_back("Uber"); 
+        //     college_companies.push_back("IBM"); 
+        //     college_companies.push_back("Flipkart");
+        // }
         void initialise_placements(vector <Placement> &placements) {
             placements.push_back(Placement(2018,10,42,1950,2000)); 
             placements.push_back(Placement(2019,11,50,1700,1800)); 
@@ -121,11 +129,22 @@ public:
     // List of companies which have visited college
     void append_companies()
     {
-        string newcompany;
-        cout << "enter the company name: ";
-        getline(cin, newcompany);
+        char newcompany[50];
+        cout << "Enter the company name: ";
+        cin>>newcompany;
         college_companies.push_back(newcompany);
-        cout << "added new companyin records" << endl;
+        cout << "added new company in records" << endl;
+    }
+    void show_companies()
+    {
+        int index=1;
+        cout<<"\t\t\tList Of Companies"<<endl<<endl;
+        cout<<"\t\t\t-----------------"<<endl<<endl;
+        for(int i=0;i<college_companies.size();i++)
+        {
+            cout<<"\t\t\t"<<index++<<". "<<college_companies[i]<<endl;
+        }
+        cout<<endl<<"\t\t\t-----------------"<<endl<<endl;
     }
     struct less_than_key
     {
@@ -162,7 +181,7 @@ public:
 
 ostream& operator<<(ostream&out,College& college){
     cout<<"\t || COLLEGE DETAILS ||"<<endl;
-    college.initialise_companies(college.college_companies);
+    // college.initialise_companies(college.college_companies);
     out<<"Serial No."<<college.index++<<endl;
     out<<"College Name"<<college.college_name<<endl;
     out<<"Location"<<college.college_location<<endl;

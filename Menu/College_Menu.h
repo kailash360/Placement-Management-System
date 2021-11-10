@@ -15,25 +15,28 @@ void College_Menu(vector<College> &Colleges)
         while(flag)
         {
         cout<<"Choose any one category to see"<<endl;
-        cout<<"1. Display placement history\n2. See placement stats of a particular year\n3. Add new companies visited recently\n4. Add new placement stat\n5. Exit\nEnter your choice: ";
+        cout<<"1. Display placement history\n2. Add new companies visited recently\n3. To show companies visited\n4. To add placement stat\n5. See placement stats of a particular year\n6. To Exit\nEnter your choice: ";
         cin>>choice1;
         switch(choice1)
         {
             case 1:Colleges[choice-1].placement_history();
             break;
-            case 2:Colleges[choice-1].show_placement_stat();
+            case 2:Colleges[choice-1].append_companies();
             break; 
-            case 3:Colleges[choice-1].append_companies();
+            case 3:Colleges[choice-1].show_companies();
             break;
             case 4:Colleges[choice-1].add_placement_stats();
             break;
-            case 5:cout<<"Thankyou"<<endl; 
+            case 5:Colleges[choice-1].show_placement_stat();
+            break;
+            case 6:cout<<"Thankyou"<<endl; 
             flag=false;
             display_line(3);
             break;
             default: cout<<"Invalid Choice"<<endl;
             break;
         }
+        cout<<"-------------------------------------"<<endl;
     }
 }
 #endif

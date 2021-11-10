@@ -18,7 +18,7 @@ class Student{
         int program_count;
         vector <Program*> programs;
     public:
-        Student(string _roll_number, string _name, int _age, string _college, string _course, int _course_duration, double _cgpa, int _program_count)
+        Student(string _roll_number, string _name, int _age, string _college, string _course, int _course_duration, double _cgpa, int _program_count,Program *p)
         {
             roll_number = _roll_number;
             name = _name;
@@ -28,8 +28,12 @@ class Student{
             course_duration = _course_duration;
             cgpa = _cgpa;
             program_count = _program_count;
+            programs.push_back(p);
         }
-
+    void initialize_programs(vector <Program*> &p)
+    {
+        
+    }
     void set_roll_number(string _roll_number)
     {
         roll_number = _roll_number;
@@ -100,22 +104,24 @@ class Student{
     {
 
         bool flag = true;
+        string name, type; 
+        int seats,duration ;
         char c;
-        Program *prog = new Program();
         cout << "Enter the program details which you want to add:" << endl;
 
         while (flag)
         {
             cout << "Enter the program name: ";
-            cin >> prog->name;
+            cin >> name;
             cout << "Enter the program type: ";
-            cin >> prog->type;
+            cin >> type;
             cout << "Enter total number of seats available: ";
-            cin >> prog->seats;
+            cin >> seats;
             cout << "Enter the duration of programme: ";
-            cin >> prog->duration;
+            cin >> duration;
             cout << "Do you want to add more programs? (y/n): ";
             cin >> c;
+            Program *prog = new Program(name,type,seats,duration);
             programs.push_back(prog);
             if (c == 'n')
             {
@@ -131,8 +137,8 @@ class Student{
         cout << "Program Name\tProgram Type\tTotal Seats\tProgram Duration" << endl;
         for (int i = 0; i < programs.size(); i++)
         {
-            cout << programs[i]->name << "\t     " << programs[i]->type << "\t     ";
-            cout << programs[i]->seats << "\t      ";
+            cout << programs[i]->name << "\t\t  " << programs[i]->type << "\t\t     ";
+            cout << programs[i]->seats << "\t\t      ";
             cout << programs[i]->duration << endl;
         }
     }

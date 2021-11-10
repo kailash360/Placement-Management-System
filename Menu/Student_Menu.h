@@ -73,7 +73,8 @@ void college_details_menu(vector<College> &Colleges,int selected_college){
                 cout<<Colleges[selected_college-1];
                 break;
             case 2:
-                //Function to be made by @VedRatan
+                Colleges[selected_college-1].placement_history();
+                break;
             case 3:
                 Colleges[selected_college-1].show_placement_stat();
                 break;          

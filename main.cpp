@@ -24,13 +24,17 @@ int main(){
     cout<<endl;
     switch(option) {
         case 1: 
+            display_role_text(1,0,0);
             Student_Menu(students,companies,colleges);
             break;
         case 2: 
-            Company_Menu(companies,colleges);
+            display_role_text(0,1,0);
+            Company_Menu(companies,colleges,students);
             break;
         case 3:
+            display_role_text(0,0,1);
             College_Menu(colleges);
+            break;
         default:
             cout<<"Invalid choice"<<endl;
     }

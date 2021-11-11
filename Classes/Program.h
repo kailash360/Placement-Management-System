@@ -59,6 +59,16 @@ public:
     }
 
     friend class Student;
+    friend ostream& operator<<(ostream&, Program& program);
 };
+
+ostream& operator<<(ostream& out,Program& program){
+    out<<"\t || PROGRAM DETAILS ||"<<endl;
+    out<<"Program Name: "<<program.name<<endl;
+    out<<"Program Type: "<<program.type<<endl;
+    out<<"Program Duration: "<<program.duration<<endl;
+    out<<"Program Seats: "<<program.seats<<endl;
+    return out;
+}
 
 #endif

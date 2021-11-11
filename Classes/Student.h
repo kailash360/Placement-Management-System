@@ -128,7 +128,7 @@ class Student{
 
     void show_program()
     {
-        cout<<endl<<"\t\t\t\t  || PLACEMENT STAT ||\n"<<endl;
+        cout<<endl<<"\t\t\t\t  || PROGRAM DETAILS ||\n"<<endl;
         cout<<"=========================================================================================================="<<endl<<endl;
         cout << "   Program Name\t|\tProgram Type\t|\tTotal Seats\t|\tProgram Duration\t|" << endl;
          cout<<"---------------------------------------------------------------------------------------------------------------------------"<<endl;
@@ -148,9 +148,9 @@ class Student{
 
 ostream &operator<<(ostream &out, Student &student)
 {
+    out << "\t|| STUDENT DETAILS ||" << endl;
     out << "Name: " << student.name << endl;
     out << "Roll Number: " << student.roll_number << endl;
-    out << "\t|| STUDENT DETAILS ||" << endl;
     out << "College: " << student.college << endl;
     out << "Course: " << student.course << endl;
     out << "Course Duration: " << student.course_duration << endl;

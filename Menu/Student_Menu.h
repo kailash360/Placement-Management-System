@@ -19,6 +19,11 @@ void offer_menu(vector<Company> &Companies){
         cin>>offer;
         display_line(1);
 
+        //Return if chosen 
+        if(offer==3){
+            return;
+        }
+
         //Exit if chosen
         if(offer==4){
             display_thank_you();

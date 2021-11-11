@@ -10,7 +10,6 @@ int main(){
     vector<Student> students;
     vector<Company> companies;
     vector<College> colleges;
-
     read_file(students,companies,colleges);
 
     Main_Menu(students,colleges,companies);

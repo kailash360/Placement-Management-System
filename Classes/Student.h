@@ -103,19 +103,19 @@ class Student{
         string name, type; 
         int seats,duration ;
         char c;
-        cout << "Enter the program details which you want to add:" << endl;
+        cout << "  Enter the program details which you want to add:" << endl;
 
         while (flag)
         {
-            cout << "Enter the program name: ";
+            cout << "  Enter the program name: ";
             cin >> name;
-            cout << "Enter the program type: ";
+            cout << "  Enter the program type: ";
             cin >> type;
-            cout << "Enter total number of seats available: ";
+            cout << "  Enter total number of seats available: ";
             cin >> seats;
-            cout << "Enter the duration of programme: ";
+            cout << "  Enter the duration of programme: ";
             cin >> duration;
-            cout << "Do you want to add more programs? (y/n): ";
+            cout << "  Do you want to add more programs? (y/n): ";
             cin >> c;
             Program *prog = new Program(name,type,seats,duration);
             programs.push_back(prog);
@@ -128,13 +128,13 @@ class Student{
 
     void show_program()
     {
-        cout<<endl<<"\t\t\t\t  || PROGRAM DETAILS ||\n"<<endl;
-        cout<<"=========================================================================================================="<<endl<<endl;
-        cout << "   Program Name\t|\tProgram Type\t|\tTotal Seats\t|\tProgram Duration\t|" << endl;
-         cout<<"---------------------------------------------------------------------------------------------------------------------------"<<endl;
+        cout<<endl<<"\t\t\t\t\t\t|| PROGRAM DETAILS ||\n"<<endl;
+        cout<<"\t\t================================================================================================="<<endl<<endl;
+        cout << "\t\t|   Program Name\t|\tProgram Type\t|\tTotal Seats\t|    Program Duration   |" << endl;
+         cout<<"\t\t-------------------------------------------------------------------------------------------------"<<endl;
         for (int i = 0; i < programs.size(); i++)
         {
-            cout <<"       "<< programs[i]->name << "\t\t   " << programs[i]->type << "\t\t\t  ";
+            cout <<"\t\t       "<< programs[i]->name << "\t\t   " << programs[i]->type << "\t\t\t  ";
             cout << programs[i]->seats << "\t\t\t    ";
             cout << programs[i]->duration << endl;
         }
@@ -148,14 +148,14 @@ class Student{
 
 ostream &operator<<(ostream &out, Student &student)
 {
-    out << "\t|| STUDENT DETAILS ||" << endl;
-    out << "Name: " << student.name << endl;
-    out << "Roll Number: " << student.roll_number << endl;
-    out << "College: " << student.college << endl;
-    out << "Course: " << student.course << endl;
-    out << "Course Duration: " << student.course_duration << endl;
-    out << "CGPA: " << student.cgpa << endl;
-    out << "Number of programs enrolled: " << student.program_count << endl;
+    out << "\t\t\t\t\t\t|| STUDENT DETAILS ||" << endl<<endl;
+    out << "  Name: " << student.name << endl;
+    out << "  Roll Number: " << student.roll_number << endl;
+    out << "  College: " << student.college << endl;
+    out << "  Course: " << student.course << endl;
+    out << "  Course Duration: " << student.course_duration << endl;
+    out << "  CGPA: " << student.cgpa << endl;
+    out << "  Number of programs enrolled: " << student.program_count << endl;
     return out;
 }
 
@@ -214,7 +214,7 @@ void delete_student(vector<Student> &programs, string roll)
             }
         }
     }
-    cout << "Deleted the records of student successfully" << endl;
+    cout << "  Deleted the records of student successfully" << endl;
 }
 
 #endif

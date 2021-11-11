@@ -55,13 +55,13 @@ public:
 
 ostream &operator<<(ostream &out, Job &job)
 {
-    out << "\t\t|| JOB DETAILS ||\n"
+    out << "\t\t\t\t\t|| JOB DETAILS ||\n"
         << endl;
-    out << "Role: " << job.role << endl;
-    out << "Amount: " << job.amount << endl;
-    out << "Location: " << job.location << endl;
-    out << "Type: " << job.type << endl;
-    out << "Required Experience: " << job.required_experience << "years" << endl;
+    out << "  Role: " << job.role << endl;
+    out << "  Amount: " << job.amount << endl;
+    out << "  Location: " << job.location << endl;
+    out << "  Type: " << job.type << endl;
+    out << "  Required Experience: " << job.required_experience << "years" << endl;
     return out;
 }
 

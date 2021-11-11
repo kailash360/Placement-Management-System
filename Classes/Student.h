@@ -134,7 +134,7 @@ class Student{
          cout<<"\t\t-------------------------------------------------------------------------------------------------"<<endl;
         for (int i = 0; i < programs.size(); i++)
         {
-            cout <<"\t\t       "<< programs[i]->name << "\t\t   " << programs[i]->type << "\t\t\t  ";
+            cout <<"\t\t       "<< programs[i]->name << "\t\t\t   " << programs[i]->type << "\t\t  ";
             cout << programs[i]->seats << "\t\t\t    ";
             cout << programs[i]->duration << endl;
         }
@@ -148,6 +148,7 @@ class Student{
 
 ostream &operator<<(ostream &out, Student &student)
 {
+    out<<"\t\t\t=================================================================="<<endl;
     out << "\t\t\t\t\t\t|| STUDENT DETAILS ||" << endl<<endl;
     out << "  Name: " << student.name << endl;
     out << "  Roll Number: " << student.roll_number << endl;

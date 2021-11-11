@@ -20,9 +20,9 @@ void offer_menu(vector<Company> &Companies){
         display_line(1);
 
         //Exit if chosen
-        if(offer==3){
-            cout<<"  Thank You"<<endl;
-            return;
+        if(offer==4){
+            display_thank_you();
+            exit(0);
         }
 
         //Display the companies

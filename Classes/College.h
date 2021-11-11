@@ -156,7 +156,7 @@ public:
 
     void placement_history()
     {
-        initialise_placements(placements);
+        //initialise_placements(placements);
         sort(placements.begin(), placements.end(), less_than_key());
         cout<<endl<<"\t\t\t\t  || PLACEMENT HISTORY ||\n"<<endl;
         cout<<"=========================================================================================================="<<endl<<endl;

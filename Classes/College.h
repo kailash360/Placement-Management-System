@@ -76,15 +76,15 @@ public:
         double average;
         double highest;
         int year, total_placed, total_appeared;
-        cout << "enter the year of which you want to enter the placement stats: ";
+        cout << "  Enter the year of which you want to enter the placement stats: ";
         cin >> year;
-        cout << "enter the average salary of all the students placed in year " << year << ": ";
+        cout << "  Enter the average salary of all the students placed in year " << year << ": ";
         cin >> average;
-        cout << "enter the highest package offered in the year " << year << ": ";
+        cout << "  Enter the highest package offered in the year " << year << ": ";
         cin >> highest;
-        cout << "enter the total number of candidates placed in year " << year << ": ";
+        cout << "  Enter the total number of candidates placed in year " << year << ": ";
         cin >> total_placed;
-        cout << "enter the total number of candidates appeared in year " << year << ": ";
+        cout << "  Enter the total number of candidates appeared in year " << year << ": ";
         cin >> total_appeared;
         Placement *current_stat = new Placement(average, highest, year, total_placed, total_appeared);
         placements.push_back(*current_stat);
@@ -92,7 +92,7 @@ public:
     void delete_placement_stat()
     {
         int year;
-        cout << "enter the year of which you want to delete the placement stat: ";
+        cout << "  Enter the year of which you want to delete the placement stat: ";
         cin >> year;
         for (int i = 0; i < placements.size(); i++)
         {
@@ -104,26 +104,27 @@ public:
                 }
             }
         }
-        cout << "deleted the placement stat of the year " << year << " successfully" << endl;
+        cout << "  Deleted the placement stat of the year " << year << " successfully" << endl;
     }
     void show_placement_stat()
     {
         int year;
-        cout << "enter the year of which you want to see the placement stat: ";
+        cout << "  Enter the year of which you want to see the placement stat: ";
         cin >> year;
-        cout<<endl<<"\t\t\t\t  || PLACEMENT STAT ||\n"<<endl;
-        cout<<"=========================================================================================================="<<endl<<endl;
+        cout<<"\n\n\t\t======================================================================================================="<<endl<<endl; 
+        cout<<"\t\t\t\t\t\t\t || PLACEMENT STAT ||\n"<<endl;
+                cout<<"\t\t======================================================================================================="<<endl<<endl;
         for (int i = 0; i < placements.size(); i++)
         {
             if (placements[i].year == year)
             {
-                cout<<"Average Salary"<<"    |    ";
+                cout<<"\t\tAverage Salary"<<"    |    ";
                 cout<<"Highest Package Offered"<<"    |    ";
                 cout<<"Candidates Appeared"<<"    |";
                 cout<<"\tCandidates Placed"<<"     |"<<endl<<endl;
-                cout<<"---------------------------------------------------------------------------------------------------------------------------"<<endl;
+                cout<<"\t\t-------------------------------------------------------------------------------------------------------"<<endl;
                 cout<<endl;
-               cout<<placements[i].average<<"LPA\t\t\t   "<<placements[i].highest<<"LPA\t\t\t "<<placements[i].total_appeared<<"\t\t\t    "<<placements[i].total_placed<<endl;            }
+               cout<<"\t\t"<<placements[i].average<<"LPA\t\t\t   "<<placements[i].highest<<"LPA\t\t\t "<<placements[i].total_appeared<<"\t\t\t    "<<placements[i].total_placed<<endl;            }
         }
     }
     // List of companies which have visited college
@@ -158,19 +159,19 @@ public:
     {
         //initialise_placements(placements);
         sort(placements.begin(), placements.end(), less_than_key());
-        cout<<endl<<"\t\t\t\t  || PLACEMENT HISTORY ||\n"<<endl;
-        cout<<"=========================================================================================================="<<endl<<endl;
-        cout<<"YEAR"<<"    |    ";
+        cout<<endl<<"\t\t\t\t\t      || PLACEMENT HISTORY ||\n"<<endl;
+                cout<<"\t======================================================================================================================"<<endl<<endl;
+        cout<<"\t|  YEAR"<<"    |    ";
                 cout<<"Average Salary"<<"    |    ";
                 cout<<"Highest Package Offered"<<"    |    ";
                 cout<<"Candidates Appeared"<<"    |";
                 cout<<"\tCandidates Placed"<<"     |"<<endl<<endl;
-                cout<<"---------------------------------------------------------------------------------------------------------------------------"<<endl;
+                cout<<"\t-----------------------------------------------------------------------------------------------------------------------"<<endl;
                 cout<<endl;
         for (int i = placements.size() - 1; i >= 0; i--)
         {
               
-            cout<<placements[i].year<<"\t\t  "<<placements[i].average<<"LPA\t\t\t   "<<placements[i].highest<<"LPA\t\t\t "<<placements[i].total_appeared<<"\t\t\t    "<<placements[i].total_placed<<endl;
+            cout<<"\t\t  "<<placements[i].year<<"\t\t  "<<placements[i].average<<"LPA\t\t\t   "<<placements[i].highest<<"LPA\t\t\t "<<placements[i].total_appeared<<"\t\t\t    "<<placements[i].total_placed<<endl;
                
         }
         cout<<endl;
@@ -180,15 +181,15 @@ public:
 
 
 ostream& operator<<(ostream&out,College& college){
-    cout<<"\t || COLLEGE DETAILS ||"<<endl;
+    cout<<"\t\t\t\t\t   || COLLEGE DETAILS ||"<<endl;
     // college.initialise_companies(college.college_companies);
-    out<<"Serial No."<<college.index++<<endl;
-    out<<"College Name"<<college.college_name<<endl;
-    out<<"Location"<<college.college_location<<endl;
-    out<<"Companies that visited "<<college.college_name<<": "<<endl;
+    out<<"  Serial No."<<college.index++<<endl;
+    out<<"  College Name"<<college.college_name<<endl;
+    out<<"  Location"<<college.college_location<<endl;
+    out<<"  Companies that visited "<<college.college_name<<": "<<endl;
     int sr_no=1;
     for (auto item:college.college_companies){
-        cout<<sr_no++<<". "<<item<<endl;
+        cout<<"   "<<sr_no++<<". "<<item<<endl;
     }
     return out;
 }

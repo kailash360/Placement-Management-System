@@ -86,15 +86,15 @@ public:
         string _type;
         string _role;
         int _required_experience;
-        cout << "Enter the salary that will provided:\n";
+        cout << "  Enter the salary that will provided:\n";
         cin >> _amount;
-        cout << "Enter location:\n";
+        cout << "  Enter location:\n";
         cin >> _location;
-        cout << "Type of job remote/on-site:\n";
+        cout << "  Type of job remote/on-site:\n";
         cin >> _type;
-        cout << "Enter the required experience\n";
+        cout << "  Enter the required experience\n";
         cin >> _required_experience;
-        cout << "Enter the role at the company\n";
+        cout << "  Enter the role at the company\n";
         cin >> _role;
         Job newJob(_amount, _location, _type, _required_experience, _role);
         jobs.push_back(newJob);
@@ -107,15 +107,15 @@ public:
         string _type;
         string _role;
         int _program_count;
-        cout << "Enter the salary that will provided:\n";
+        cout << "  Enter the salary that will provided:\n";
         cin >> _amount;
-        cout << "Enter location:\n";
+        cout << "  Enter location:\n";
         cin >> _location;
-        cout << "Type of internship remote/on-site:\n";
+        cout << "  Type of internship remote/on-site:\n";
         cin >> _type;
-        cout << "Enter the role at the company\n";
+        cout << "  Enter the role at the company\n";
         cin >> _role;
-        cout << "Enter the number of programs of student required\n";
+        cout << "  Enter the number of programs of student required\n";
         cin >> _program_count;
         Internship new_internship(_amount, _location, _type, _role, _program_count);
         internships.push_back(new_internship);
@@ -125,7 +125,7 @@ public:
     {
         int index;
         display_job();
-        cout << "Enter the serial number of the job you wish to delete: ";
+        cout << "  Enter the serial number of the job you wish to delete: ";
         cin >> index;
         jobs.erase(jobs.begin() + (index - 1));
     }
@@ -134,7 +134,7 @@ public:
     {
         int index;
         display_internship();
-        cout << "Enter the serial number of the internship you wish to delete: ";
+        cout << "  Enter the serial number of the internship you wish to delete: ";
         cin >> index;
         internships.erase(internships.begin() + (index - 1));
     }
@@ -142,7 +142,7 @@ public:
     void update_job_salary(int choice)
     {
         int _salary;
-        cout << "Enter the new salary";
+        cout << "  Enter the new salary";
         cin >> _salary;
         jobs[choice - 1].set_amount(_salary);
     }
@@ -150,7 +150,7 @@ public:
     void update_internship_salary(int choice)
     {
         int _salary;
-        cout << "Enter the new salary";
+        cout << "  Enter the new salary";
         cin >> _salary;
         internships[choice - 1].set_amount(_salary);
     }
@@ -158,11 +158,11 @@ public:
     void display_internship(int owner = 0)
     {
 
-        cout << "\t\t  || LIST OF INTERNSHIPS ||\n"
+        cout << "\t\t\t\t\t\t\t  || LIST OF INTERNSHIPS ||\n"
              << endl;
-        cout.width(5);
-        cout << "Serial No."
-             << "|";
+        cout.width(3);
+    cout << "\t\t\t\t| Serial No."
+         << "|";
         cout.width(15);
         cout << "Location"
              << "\t|";
@@ -173,13 +173,15 @@ public:
         cout << "Role"
              << "\t|";
         cout << endl;
-        cout << "-------------------------------------------------------------------------" << endl;
+
+        cout << "\t\t\t\t-------------------------------------------------------------------------" << endl;
 
         int index = 1;
         for (auto internship : internships)
         {
-            cout.width(5);
-            cout << index++ << " \t  |";
+           cout<<"\t\t\t\t";
+        cout.width(3);
+        cout << "|   " << index++ << " \t  |";
             cout.width(15);
             cout << internship.get_location() << "\t|";
             cout.width(10);
@@ -188,18 +190,19 @@ public:
             cout << internship.get_role() << "\t|";
             cout << endl;
         }
+        cout << "\t\t\t\t-------------------------------------------------------------------------" << endl;
         if (!owner)
         {
             cout << "\n"
                  << endl;
-            cout << "==========================================================================" << endl;
+            cout << "\t\t\t\t=========================================================================="<<endl << endl;
 
-            cout << "Enter serial number of the internship to see in detail\n(0 if you wish to skip): ";
+            cout << "  Enter serial number of the internship to see in detail\n(0 if you wish to skip): ";
             cin >> index;
-            cout << "==========================================================================" << endl;
+            cout << "\t\t\t\t==========================================================================" << endl;
             if (index)
             {
-                cout << (internships[index - 1]);
+                cout <<"\t\t"<<(internships[index - 1]);
             }
         }
     }
@@ -207,11 +210,11 @@ public:
     void display_job(int owner = 0)
     {
 
-        cout << "\t\t  || LIST OF JOBS ||\n"
+        cout << "\t\t\t\t\t\t\t  || LIST OF JOBS ||\n"
              << endl;
-        cout.width(5);
-        cout << "Serial No."
-             << "|";
+        cout.width(3);
+    cout << "\t\t\t\t| Serial No."
+         << "|";
         cout.width(15);
         cout << "Location"
              << "\t|";
@@ -222,13 +225,14 @@ public:
         cout << "Role"
              << "\t|";
         cout << endl;
-        cout << "-------------------------------------------------------------------------" << endl;
+        cout << "\t\t\t\t-------------------------------------------------------------------------" << endl;
 
         int index = 1;
         for (auto job : jobs)
         {
-            cout.width(5);
-            cout << index++ << " \t  |";
+            cout<<"\t\t\t\t";
+        cout.width(3);
+        cout << "|   " << index++ << " \t  |";
             cout.width(15);
             cout << job.get_location() << "\t|";
             cout.width(10);
@@ -237,17 +241,18 @@ public:
             cout << job.get_role() << "\t|";
             cout << endl;
         }
+        cout << "\t\t\t\t-------------------------------------------------------------------------" << endl;
         if (!owner)
         {
             cout << "\n"
                  << endl;
-            cout << "==========================================================================" << endl;
-            cout << "Enter serial number of the job to see in detail\n(0 if you wish to skip): ";
+            cout << "\t\t\t\t==========================================================================" << endl;
+            cout << "  Enter serial number of the job to see in detail\n(0 if you wish to skip): ";
             cin >> index;
-            cout << "==========================================================================" << endl;
+            cout << "\t\t\t\t==========================================================================" << endl;
             if (index)
             {
-                cout << jobs[index - 1];
+                cout <<"\t\t"<< jobs[index - 1];
             }
         }
     }
@@ -259,12 +264,12 @@ public:
 
 ostream &operator<<(ostream &out, Company &company)
 {
-    out << "\t\t || COMPANY DETAILS ||\n"
+    out << "\n\t\t\t || COMPANY DETAILS ||\n"
         << endl;
-    out << "Name: " << company.get_name() << endl;
-    out << "Location: " << company.get_location() << endl;
-    out << "Branch Preferred: " << company.get_branch() << endl;
-    out << "Total Offers made: " << company.get_total_offers() << endl;
+    out << "  Name: " << company.get_name() << endl;
+    out << "  Location: " << company.get_location() << endl;
+    out << "  Branch Preferred: " << company.get_branch() << endl;
+    out << "  Total Offers made: " << company.get_total_offers() << endl;
     return out;
 }
 

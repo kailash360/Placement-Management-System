@@ -12,22 +12,23 @@ void offer_menu(vector<Company> &Companies){
 
         //Select the detail which the student wants to see 
         int offer = 1;
+        cout<<endl;
         display_line(1);
-        cout<<"Choose the number of what you want to see:"<<endl;
-        cout<<"1.Jobs\n2.Internships\n3.Return to previous menu\n4.Exit\n->";
+        cout<<"\n\n  Choose the number of what you want to see:"<<endl;
+        cout<<"  1.Jobs\n  2.Internships\n  3.Return to previous menu\n  4.Exit\n  ->";
         cin>>offer;
         display_line(1);
 
         //Exit if chosen
         if(offer==3){
-            cout<<"Thank You"<<endl;
+            cout<<"  Thank You"<<endl;
             return;
         }
 
         //Display the companies
         display_companies(Companies);
         int selected_company = 1;
-        cout<<"Select the company you want to see: ";
+        cout<<"  Select the company you want to see: ";
         cin>>selected_company;
 
         //Display the details of particular company
@@ -50,7 +51,7 @@ void offer_menu(vector<Company> &Companies){
                 display_thank_you();
                 exit(0);
             default: 
-                cout<<"Invalid choice"<<endl;
+                cout<<"  Invalid choice"<<endl;
         }
     }
 
@@ -62,9 +63,10 @@ void college_details_menu(vector<College> &Colleges,int selected_college){
 
         //Select the detail which the student wants to see 
         int option = 1;
+        cout<<endl;
         display_line(1);
-        cout<<"Choose the number of what you want to see:"<<endl;
-        cout<<"1.College Details\n2.Placement History\n3.Placement Details of a particular year\n4.Return to previous menu\n5.Exit\n->";
+        cout<<"\n\n  Choose the number of what you want to see:"<<endl;
+        cout<<"  1.College Details\n  2.Placement History\n  3.Placement Details of a particular year\n  4.Return to previous menu\n  5.Exit\n  ->";
         cin>>option;
         display_line(1);
 
@@ -86,7 +88,7 @@ void college_details_menu(vector<College> &Colleges,int selected_college){
                 display_thank_you();
                 exit(0);
             default:
-                cout<<"Invalid choice"<<endl;
+                cout<<"  Invalid choice"<<endl;
         }
     }
 }
@@ -96,16 +98,17 @@ void student_details_menu(vector<Student> &Students){
     display_students(Students);
 
     int selected_student = 0;
-    cout<<"Choose your serial number: ";
+    cout<<"  Choose your serial number: ";
     cin >> selected_student;
 
     while(true){
 
         //Select the detail which the student wants to see 
         int option = 1;
+        cout<<endl;
         display_line(1);
-        cout<<"Choose the number of what you want to see:"<<endl;
-        cout<<"1.My Details\n2.My Programs\n3.Add new program\n4.Return to previous menu\n5.Exit\n->";
+        cout<<"\n\n  Choose the number of what you want to see:"<<endl;
+        cout<<"  1.My Details\n  2.My Programs\n  3.Add new program\n  4.Return to previous menu\n  5.Exit\n  ->";
         cin>>option;
         display_line(1);
 
@@ -127,7 +130,7 @@ void student_details_menu(vector<Student> &Students){
                 display_thank_you();
                 exit(0);
             default:
-                cout<<"Invalid choice"<<endl;
+                cout<<"  Invalid choice"<<endl;
         }
     }
 }
@@ -137,8 +140,8 @@ void Student_Menu(vector<Student> &Students,vector<Company> &Companies, vector<C
     int choice = 0,selected_college = 0;
     while(true){
 
-        cout<<"Choose from the following:"<<endl;
-        cout<<"1.Offers\n2.College Details\n3.Student Details\n4.Exit\n->";
+        cout<<"\n  Choose from the following:"<<endl;
+        cout<<"\n  1.Offers\n  2.College Details\n  3.Student Details\n  4.Exit\n  ->";
         cin>>choice;
 
         switch(choice){
@@ -149,7 +152,7 @@ void Student_Menu(vector<Student> &Students,vector<Company> &Companies, vector<C
 
                 if(!selected_college){
                     display_college_list(Colleges);
-                    cout<<"Enter the serial number of your college:";
+                    cout<<"  Enter the serial number of your college:";
                     cin>>selected_college;
                 }
 
@@ -162,7 +165,7 @@ void Student_Menu(vector<Student> &Students,vector<Company> &Companies, vector<C
                 display_thank_you();
                 exit(0);
             default:
-                cout<<"Invalid choice"<<endl;
+                cout<<"  Invalid choice"<<endl;
         }
     }
 }

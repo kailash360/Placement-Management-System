@@ -68,7 +68,7 @@ void Company_Details_Menu(vector<Company> &Companies,vector<College> &Colleges){
         if(!selected_company){
             //Display the companies
             display_companies(Companies);
-            cout<<"Which company are you from? \n  (Enter Serial Number): ";
+            cout<<"Which company are you from? \n(Enter Serial Number): ";
             cin>>selected_company;
 
             //Display the details of particular company
@@ -118,7 +118,7 @@ void Company_Details_Menu(vector<Company> &Companies,vector<College> &Colleges){
                 cout<<"\t\t\t============================================================================"<<endl;
                 break;
             case 2: 
-                Companies[selected_company - 1].display_internship();
+                Companies[selected_company - 1].display_internship(1);
                 cout<<"\n"<<endl;
                 cout<<"\t\t\t============================================================================"<<endl;
                 cout << "\nEnter serial number of the internship to see/edit in detail\n(0 if you wish to skip/add/delete an internship): ";

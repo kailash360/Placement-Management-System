@@ -55,7 +55,7 @@ void Company_Details_Menu(vector<Company> &Companies,vector<College> &Colleges){
 
         //Exit if chosen
         if(offer==3){
-            cout<<"  Thank You"<<endl;
+            display_thank_you();
             return;
         }
 
@@ -129,7 +129,7 @@ void Company_Details_Menu(vector<Company> &Companies,vector<College> &Colleges){
                 else
                 {
                     int ch;
-                    cout<<"  Enter\n  1->Add a intership \n  2->Delete a intership\n  3->Skip\n  ";
+                    cout<<"  Enter\n  1)Add a intership \n  2)Delete a intership\n  3)Skip\n  ";
                     cin>>ch;
                     switch (ch)
                     {
@@ -147,7 +147,7 @@ void Company_Details_Menu(vector<Company> &Companies,vector<College> &Colleges){
                 cout<<"============================================================================"<<endl;
                 break;
             case 3:
-                cout<<"  Thank You"<<endl;
+                display_thank_you();
                 return;
             default: 
                 cout<<"  Invalid option"<<endl;

@@ -98,6 +98,7 @@ public:
         cin >> _role;
         Job newJob(_amount, _location, _type, _required_experience, _role);
         jobs.push_back(newJob);
+        cout<<"Job added successfully!"<<endl;
     }
 
     void append_internship()
@@ -119,24 +120,27 @@ public:
         cin >> _program_count;
         Internship new_internship(_amount, _location, _type, _role, _program_count);
         internships.push_back(new_internship);
+        cout<<"Internship added successfully!"<<endl;
     }
 
     void delete_job()
     {
         int index;
-        display_job();
+        display_job(1);
         cout << "Enter the serial number of the job you wish to delete: ";
         cin >> index;
         jobs.erase(jobs.begin() + (index - 1));
+        cout<<"Job deleted successfully!"<<endl;
     }
 
     void delete_internship()
     {
         int index;
-        display_internship();
+        display_internship(1);
         cout << "Enter the serial number of the internship you wish to delete: ";
         cin >> index;
         internships.erase(internships.begin() + (index - 1));
+        cout<<"Internship deleted successfully!"<<endl;
     }
 
     void update_job_salary(int choice)

@@ -134,7 +134,7 @@ class Student{
          cout<<"\t\t-------------------------------------------------------------------------------------------------"<<endl;
         for (int i = 0; i < programs.size(); i++)
         {
-            cout <<"\t\t       "<< programs[i]->name << "\t\t\t   " << programs[i]->type << "\t\t  ";
+            cout <<"\t\t       "<< programs[i]->name << "\t\t\t      " << programs[i]->type << "\t\t  ";
             cout << programs[i]->seats << "\t\t\t    ";
             cout << programs[i]->duration << endl;
         }

@@ -197,7 +197,7 @@ public:
                  << endl;
             cout << "\t\t\t\t=========================================================================="<<endl << endl;
 
-            cout << "  Enter serial number of the internship to see in detail\n(0 if you wish to skip): ";
+            cout << "  Enter serial number of the internship to see in detail\n  (0 if you wish to skip): ";
             cin >> index;
             cout << "\t\t\t\t==========================================================================" << endl;
             if (index)
@@ -247,7 +247,7 @@ public:
             cout << "\n"
                  << endl;
             cout << "\t\t\t\t==========================================================================" << endl;
-            cout << "  Enter serial number of the job to see in detail\n(0 if you wish to skip): ";
+            cout << "  Enter serial number of the job to see in detail\n  (0 if you wish to skip): ";
             cin >> index;
             cout << "\t\t\t\t==========================================================================" << endl;
             if (index)

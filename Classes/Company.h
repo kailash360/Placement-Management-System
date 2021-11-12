@@ -264,12 +264,12 @@ public:
 
 ostream &operator<<(ostream &out, Company &company)
 {
-    out << "\n\t\t\t || COMPANY DETAILS ||\n"
+    out << "\n\t\t\t\t\t\t || COMPANY DETAILS ||\n"
         << endl;
-    out << "  Name: " << company.get_name() << endl;
-    out << "  Location: " << company.get_location() << endl;
-    out << "  Branch Preferred: " << company.get_branch() << endl;
-    out << "  Total Offers made: " << company.get_total_offers() << endl;
+    out << "\t\t\t  Name: " << company.get_name() << endl;
+    out << "\t\t\t  Location: " << company.get_location() << endl;
+    out << "\t\t\t  Branch Preferred: " << company.get_branch() << endl;
+    out << "\t\t\t  Total Offers made: " << company.get_total_offers() << endl;
     return out;
 }
 

@@ -86,13 +86,13 @@ public:
         cin >> total_placed;
         cout << "  Enter the total number of candidates appeared in year " << year << ": ";
         cin >> total_appeared;
-        Placement *current_stat = new Placement(average, highest, year, total_placed, total_appeared);
+        Placement *current_stat = new Placement(year, average, highest, total_placed, total_appeared);
         placements.push_back(*current_stat);
     }
     void delete_placement_stat()
     {
         int year;
-        cout << "  Enter the year of which you want to delete the placement stat: ";
+        cout << "  Enter the year of which you want to delete the placement statistics: ";
         cin >> year;
         for (int i = 0; i < placements.size(); i++)
         {
@@ -104,12 +104,12 @@ public:
                 }
             }
         }
-        cout << "  Deleted the placement stat of the year " << year << " successfully" << endl;
+        cout << "Deleted the placement stat of the year " << year << " successfully" << endl;
     }
     void show_placement_stat()
     {
         int year;
-        cout << "  Enter the year of which you want to see the placement stat: ";
+        cout << "Enter the year of which you want to see the placement stat: ";
         cin >> year;
         cout<<"\n\n\t\t======================================================================================================="<<endl<<endl; 
         cout<<"\t\t\t\t\t\t\t || PLACEMENT STAT ||\n"<<endl;
@@ -134,18 +134,17 @@ public:
         cout << "Enter the company name: ";
         cin>>newcompany;
         college_companies.push_back(newcompany);
-        cout << "added new company in records" << endl;
+        cout << "Successfully added new company in records" << endl;
     }
     void show_companies()
     {
         int index=1;
-        cout<<"\t\t\tList Of Companies"<<endl<<endl;
-        cout<<"\t\t\t-----------------"<<endl<<endl;
+        cout<<"\t\t\t\t\t\t\t|| LIST OF COMPANIES ||"<<endl<<endl;
+        cout<<"\t\t\t-------------------------------------------------------------------------------------------------------"<<endl<<endl;
         for(int i=0;i<college_companies.size();i++)
         {
             cout<<"\t\t\t"<<index++<<". "<<college_companies[i]<<endl;
         }
-        cout<<endl<<"\t\t\t-----------------"<<endl<<endl;
     }
     struct less_than_key
     {
@@ -171,7 +170,7 @@ public:
         for (int i = placements.size() - 1; i >= 0; i--)
         {
               
-            cout<<"\t\t  "<<placements[i].year<<"\t\t  "<<placements[i].average<<"LPA\t\t\t   "<<placements[i].highest<<"LPA\t\t\t "<<placements[i].total_appeared<<"\t\t\t    "<<placements[i].total_placed<<endl;
+            cout<<"\t   "<<placements[i].year<<"\t\t  "<<placements[i].average<<" LPA\t\t\t  "<<placements[i].highest<<" LPA\t\t\t  "<<placements[i].total_appeared<<"\t\t\t    "<<placements[i].total_placed<<endl;
                
         }
         cout<<endl;
@@ -184,9 +183,9 @@ ostream& operator<<(ostream&out,College& college){
     cout<<"\t\t\t\t\t   || COLLEGE DETAILS ||"<<endl;
     // college.initialise_companies(college.college_companies);
     out<<"  Serial No."<<college.index++<<endl;
-    out<<"  College Name"<<college.college_name<<endl;
-    out<<"  Location"<<college.college_location<<endl;
-    out<<"  Companies that visited "<<college.college_name<<": "<<endl;
+    out<<"  College Name: "<<college.college_name<<endl;
+    out<<"  Location: "<<college.college_location<<endl;
+    out<<"  Companies that visited: "<<college.college_name<<": "<<endl;
     int sr_no=1;
     for (auto item:college.college_companies){
         cout<<"   "<<sr_no++<<". "<<item<<endl;

@@ -76,7 +76,7 @@ void Company_Details_Menu(vector<Company> &Companies,vector<College> &Colleges){
             cout<<endl;
         }
         cout<<"Choose the number of what you want to see/edit:"<<endl;
-        cout<<"1.Jobs\n2.Internships\n3.Exit\n->";
+        cout<<"1.Jobs\n2.Internships\n3.Return to previous menu\n4.Exit\n->";
         cin>>offer;
         //Display job or internship for selected company
         //based on the selected option
@@ -153,8 +153,10 @@ void Company_Details_Menu(vector<Company> &Companies,vector<College> &Colleges){
                 cout<<"\t\t\t============================================================================"<<endl;
                 break;
             case 3:
-                display_thank_you();
                 return;
+            case 4:
+                display_thank_you();
+                exit(0);
             default: 
                 cout<<"  Invalid option"<<endl;
         }
